@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 管理员主界面</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <div class="header-title">车队管理</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-bell"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 搜索栏 -->
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="搜索车辆、司机或任务" class="search-input">
+      </div>
+      
+      <!-- 概览统计 -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">35</div>
+          <div class="stat-label">车辆总数</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">28</div>
+          <div class="stat-label">司机总数</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">24</div>
+          <div class="stat-label">在途车辆</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">9</div>
+          <div class="stat-label">待分配任务</div>
+        </div>
+      </div>
+      
+      <!-- 地图视图 -->
+      <div class="card">
+        <div class="card-title">车辆实时分布</div>
+        <div class="map-container" style="height: 200px; background-image: url('https://i.ibb.co/y88sQBN/map-preview.jpg'); background-size: cover; background-position: center;"></div>
+      </div>
+      
+      <!-- 快捷功能 -->
+      <div style="margin-bottom: 16px;">
+        <div class="card-title">快捷功能</div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+              <i class="fas fa-truck" style="font-size: 20px; color: var(--primary-blue);"></i>
+            </div>
+            <span style="font-size: 12px;">派车</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+              <i class="fas fa-clipboard-list" style="font-size: 20px; color: var(--primary-blue);"></i>
+            </div>
+            <span style="font-size: 12px;">任务</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+              <i class="fas fa-headset" style="font-size: 20px; color: var(--primary-blue);"></i>
+            </div>
+            <span style="font-size: 12px;">服务</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+              <i class="fas fa-chart-line" style="font-size: 20px; color: var(--primary-blue);"></i>
+            </div>
+            <span style="font-size: 12px;">报表</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 待处理任务 -->
+      <div class="card">
+        <div class="card-title">待处理任务</div>
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">货物配送 #T3421</div>
+            <div class="list-item-subtitle">北京 → 天津 | 3台车辆</div>
+          </div>
+          <div>
+            <span class="status-badge status-pending">待分配</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">设备运输 #T3419</div>
+            <div class="list-item-subtitle">上海 → 苏州 | 1台车辆</div>
+          </div>
+          <div>
+            <span class="status-badge status-active">进行中</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">原材料配送 #T3417</div>
+            <div class="list-item-subtitle">深圳 → 东莞 | 2台车辆</div>
+          </div>
+          <div>
+            <span class="status-badge status-issue">需关注</span>
+          </div>
+        </div>
+        <div style="padding: 12px; text-align: center;">
+          <a href="admin-dispatch.html" style="color: var(--primary-blue); text-decoration: none; font-size: 14px;">查看全部任务 <i class="fas fa-arrow-right" style="font-size: 12px;"></i></a>
+        </div>
+      </div>
+      
+      <!-- 最近服务请求 -->
+      <div class="card">
+        <div class="card-title">最近服务请求</div>
+        <div class="list-item">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-car-crash" style="font-size: 20px; color: var(--error-red);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">车辆故障 #S1024</div>
+            <div class="list-item-subtitle">粤B12345 | 司机：张师傅</div>
+            <div style="font-size: 12px; color: var(--dark-gray);">10分钟前</div>
+          </div>
+          <div>
+            <span class="status-badge status-issue">紧急</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-gas-pump" style="font-size: 20px; color: var(--warning-yellow);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">加油需求 #S1023</div>
+            <div class="list-item-subtitle">京A67890 | 司机：李师傅</div>
+            <div style="font-size: 12px; color: var(--dark-gray);">25分钟前</div>
+          </div>
+          <div>
+            <span class="status-badge status-active">处理中</span>
+          </div>
+        </div>
+        <div style="padding: 12px; text-align: center;">
+          <a href="admin-service.html" style="color: var(--primary-blue); text-decoration: none; font-size: 14px;">查看全部服务 <i class="fas fa-arrow-right" style="font-size: 12px;"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+      <a href="admin-dashboard.html" class="nav-item active">
+        <i class="fas fa-home nav-icon"></i>
+        <span>首页</span>
+      </a>
+      <a href="admin-vehicles.html" class="nav-item">
+        <i class="fas fa-truck nav-icon"></i>
+        <span>车辆</span>
+      </a>
+      <a href="admin-dispatch.html" class="nav-item">
+        <i class="fas fa-clipboard-list nav-icon"></i>
+        <span>任务</span>
+      </a>
+      <a href="admin-service.html" class="nav-item">
+        <i class="fas fa-headset nav-icon"></i>
+        <span>服务</span>
+      </a>
+      <a href="admin-finance.html" class="nav-item">
+        <i class="fas fa-wallet nav-icon"></i>
+        <span>金融</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html> 

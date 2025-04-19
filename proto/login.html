@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 登录</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="auth-container">
+      <div class="auth-logo">
+        <img src="https://i.ibb.co/hRTWc3t/fleet-logo.png" alt="车队管理系统">
+        <h1 style="margin-top: 16px; color: var(--primary-blue);">车队管理系统</h1>
+      </div>
+      
+      <div class="auth-form">
+        <div class="input-group">
+          <label for="username" class="input-label">用户名</label>
+          <div class="input-field" style="display: flex; align-items: center;">
+            <i class="fas fa-user" style="margin-right: 10px; color: var(--dark-gray);"></i>
+            <input type="text" id="username" style="border: none; flex: 1; outline: none; font-size: 16px;">
+          </div>
+        </div>
+        
+        <div class="input-group">
+          <label for="password" class="input-label">密码</label>
+          <div class="input-field" style="display: flex; align-items: center;">
+            <i class="fas fa-lock" style="margin-right: 10px; color: var(--dark-gray);"></i>
+            <input type="password" id="password" style="border: none; flex: 1; outline: none; font-size: 16px;">
+          </div>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center;">
+            <input type="checkbox" id="remember" style="margin-right: 8px;">
+            <label for="remember" style="color: var(--dark-gray); font-size: 14px;">记住密码</label>
+          </div>
+          <a href="#" style="color: var(--primary-blue); text-decoration: none; font-size: 14px;">忘记密码？</a>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+          <button class="btn btn-primary" style="width: 100%;">登录</button>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; margin: 16px 0;">
+            <span style="flex: 1; height: 1px; background-color: var(--medium-gray);"></span>
+            <span style="margin: 0 16px; color: var(--dark-gray); font-size: 14px;">或</span>
+            <span style="flex: 1; height: 1px; background-color: var(--medium-gray);"></span>
+          </div>
+          
+          <div style="display: flex; gap: 12px;">
+            <button class="btn btn-secondary" style="width: 50%; display: flex; justify-content: center; align-items: center;">
+              <i class="fas fa-id-card" style="margin-right: 8px;"></i> 管理员
+            </button>
+            <button class="btn btn-secondary" style="width: 50%; display: flex; justify-content: center; align-items: center;">
+              <i class="fas fa-car" style="margin-right: 8px;"></i> 司机
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="auth-footer">
+        <p>还没有账号？ <a href="register.html" class="auth-link">立即注册</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

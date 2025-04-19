@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 服务支持</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <div class="header-title">服务支持</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-filter"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 搜索栏 -->
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="搜索服务请求" class="search-input">
+      </div>
+      
+      <!-- 服务统计 -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">12</div>
+          <div class="stat-label">今日请求</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">5</div>
+          <div class="stat-label">待处理</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3</div>
+          <div class="stat-label">紧急</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">4</div>
+          <div class="stat-label">处理中</div>
+        </div>
+      </div>
+      
+      <!-- 标签页导航 -->
+      <div class="tabs">
+        <div class="tab active">全部</div>
+        <div class="tab">维修救援</div>
+        <div class="tab">加油加气</div>
+        <div class="tab">其他</div>
+      </div>
+      
+      <!-- 服务请求列表 -->
+      <div class="card">
+        <div class="card-title">服务请求列表</div>
+        
+        <!-- 服务请求项 1 -->
+        <a href="admin-service-detail.html" class="list-item" style="display: flex; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-car-crash" style="font-size: 24px; color: var(--error-red);"></i>
+          </div>
+          <div class="list-item-content">
+            <div style="display: flex; justify-content: space-between;">
+              <div class="list-item-title">车辆故障 #S1024</div>
+              <span class="status-badge status-issue">紧急</span>
+            </div>
+            <div class="list-item-subtitle">粤B12345 | 司机：张师傅</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">位置：广州市花都区S15高速公路</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">10分钟前</div>
+          </div>
+        </a>
+        
+        <!-- 服务请求项 2 -->
+        <a href="admin-service-detail.html" class="list-item" style="display: flex; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-gas-pump" style="font-size: 24px; color: var(--warning-yellow);"></i>
+          </div>
+          <div class="list-item-content">
+            <div style="display: flex; justify-content: space-between;">
+              <div class="list-item-title">加油需求 #S1023</div>
+              <span class="status-badge status-active">处理中</span>
+            </div>
+            <div class="list-item-subtitle">京A67890 | 司机：李师傅</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">位置：北京市通州区六环路</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">25分钟前</div>
+          </div>
+        </a>
+        
+        <!-- 服务请求项 3 -->
+        <a href="admin-service-detail.html" class="list-item" style="display: flex; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-tire" style="font-size: 24px; color: var(--error-red);"></i>
+          </div>
+          <div class="list-item-content">
+            <div style="display: flex; justify-content: space-between;">
+              <div class="list-item-title">轮胎爆胎 #S1022</div>
+              <span class="status-badge status-pending">待处理</span>
+            </div>
+            <div class="list-item-subtitle">沪C54321 | 司机：王师傅</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">位置：上海市嘉定区G2高速公路</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">40分钟前</div>
+          </div>
+        </a>
+        
+        <!-- 服务请求项 4 -->
+        <a href="admin-service-detail.html" class="list-item" style="display: flex; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-battery-quarter" style="font-size: 24px; color: var(--warning-yellow);"></i>
+          </div>
+          <div class="list-item-content">
+            <div style="display: flex; justify-content: space-between;">
+              <div class="list-item-title">电瓶电量不足 #S1021</div>
+              <span class="status-badge status-active">处理中</span>
+            </div>
+            <div class="list-item-subtitle">浙E24680 | 司机：赵师傅</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">位置：杭州市萧山区机场路</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">1小时前</div>
+          </div>
+        </a>
+        
+        <!-- 服务请求项 5 -->
+        <a href="admin-service-detail.html" class="list-item" style="display: flex; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-temperature-high" style="font-size: 24px; color: var(--warning-yellow);"></i>
+          </div>
+          <div class="list-item-content">
+            <div style="display: flex; justify-content: space-between;">
+              <div class="list-item-title">冷藏系统异常 #S1020</div>
+              <span class="status-badge status-pending">待处理</span>
+            </div>
+            <div class="list-item-subtitle">粤B67890 | 司机：陈师傅</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">位置：深圳市宝安区107国道</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">1小时20分钟前</div>
+          </div>
+        </a>
+        
+        <!-- 服务请求项 6 -->
+        <a href="admin-service-detail.html" class="list-item" style="display: flex; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-info-circle" style="font-size: 24px; color: var(--dark-gray);"></i>
+          </div>
+          <div class="list-item-content">
+            <div style="display: flex; justify-content: space-between;">
+              <div class="list-item-title">更新行驶证 #S1019</div>
+              <span class="status-badge status-completed">已完成</span>
+            </div>
+            <div class="list-item-subtitle">津D13579 | 司机：刘师傅</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 4px;">已处理 · 2小时前</div>
+          </div>
+        </a>
+      </div>
+      
+      <!-- 近期维修统计 -->
+      <div class="card">
+        <div class="card-title">近期维修统计</div>
+        <div style="padding: 16px 0;">
+          <div style="height: 160px; display: flex; align-items: flex-end; gap: 12px; padding: 0 12px; margin-bottom: 12px;">
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 100%; height: 65%; background-color: var(--light-blue); border-radius: 4px 4px 0 0;"></div>
+              <div style="font-size: 12px; margin-top: 8px;">周一</div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 100%; height: 40%; background-color: var(--light-blue); border-radius: 4px 4px 0 0;"></div>
+              <div style="font-size: 12px; margin-top: 8px;">周二</div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 100%; height: 80%; background-color: var(--light-blue); border-radius: 4px 4px 0 0;"></div>
+              <div style="font-size: 12px; margin-top: 8px;">周三</div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 100%; height: 50%; background-color: var(--light-blue); border-radius: 4px 4px 0 0;"></div>
+              <div style="font-size: 12px; margin-top: 8px;">周四</div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 100%; height: 70%; background-color: var(--primary-blue); border-radius: 4px 4px 0 0;"></div>
+              <div style="font-size: 12px; margin-top: 8px;">周五</div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 100%; height: 30%; background-color: var(--light-blue); border-radius: 4px 4px 0 0;"></div>
+              <div style="font-size: 12px; margin-top: 8px;">周六</div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 100%; height: 20%; background-color: var(--light-blue); border-radius: 4px 4px 0 0;"></div>
+              <div style="font-size: 12px; margin-top: 8px;">周日</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 0 16px;">
+            <div>
+              <div style="font-size: 24px; font-weight: 500; color: var(--primary-blue);">32</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">本周服务请求</div>
+            </div>
+            <div>
+              <div style="font-size: 24px; font-weight: 500; color: var(--success-green);">95%</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">及时处理率</div>
+            </div>
+            <div>
+              <div style="font-size: 24px; font-weight: 500; color: var(--primary-blue);">4.8<span style="font-size: 16px;">/5</span></div>
+              <div style="font-size: 12px; color: var(--dark-gray);">服务满意度</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+      <a href="admin-dashboard.html" class="nav-item">
+        <i class="fas fa-home nav-icon"></i>
+        <span>首页</span>
+      </a>
+      <a href="admin-vehicles.html" class="nav-item">
+        <i class="fas fa-truck nav-icon"></i>
+        <span>车辆</span>
+      </a>
+      <a href="admin-dispatch.html" class="nav-item">
+        <i class="fas fa-clipboard-list nav-icon"></i>
+        <span>任务</span>
+      </a>
+      <a href="admin-service.html" class="nav-item active">
+        <i class="fas fa-headset nav-icon"></i>
+        <span>服务</span>
+      </a>
+      <a href="admin-finance.html" class="nav-item">
+        <i class="fas fa-wallet nav-icon"></i>
+        <span>金融</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html> 

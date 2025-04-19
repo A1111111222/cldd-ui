@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 金融服务</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <div class="header-title">金融服务</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-calendar-alt"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 金融概览 -->
+      <div class="card" style="padding: 20px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div>
+            <div style="color: var(--dark-gray); font-size: 14px;">车队资金总额</div>
+            <div style="font-size: 24px; font-weight: 500; color: var(--primary-blue);">¥ 2,458,750.00</div>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-plus"></i> 充值
+            </button>
+            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-file-export"></i> 导出
+            </button>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <div style="border-radius: 8px; background-color: var(--light-blue); padding: 16px;">
+            <div style="color: var(--dark-gray); font-size: 12px;">司机工资</div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--dark-blue); margin-top: 4px;">¥ 354,200.00</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 8px; display: flex; align-items: center;">
+              <i class="fas fa-arrow-up" style="color: var(--error-red); margin-right: 4px;"></i> 较上月增加 3.2%
+            </div>
+          </div>
+          <div style="border-radius: 8px; background-color: var(--light-blue); padding: 16px;">
+            <div style="color: var(--dark-gray); font-size: 12px;">燃油费</div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--dark-blue); margin-top: 4px;">¥ 289,450.00</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 8px; display: flex; align-items: center;">
+              <i class="fas fa-arrow-up" style="color: var(--error-red); margin-right: 4px;"></i> 较上月增加 5.7%
+            </div>
+          </div>
+          <div style="border-radius: 8px; background-color: var(--light-blue); padding: 16px;">
+            <div style="color: var(--dark-gray); font-size: 12px;">维修保养</div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--dark-blue); margin-top: 4px;">¥ 178,320.00</div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-top: 8px; display: flex; align-items: center;">
+              <i class="fas fa-arrow-down" style="color: var(--success-green); margin-right: 4px;"></i> 较上月减少 2.1%
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 标签页导航 -->
+      <div class="tabs">
+        <div class="tab active">收支明细</div>
+        <div class="tab">ETC管理</div>
+        <div class="tab">油卡管理</div>
+        <div class="tab">车贷服务</div>
+      </div>
+      
+      <!-- 收支明细 -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div class="card-title" style="margin-bottom: 0;">近期交易</div>
+          <div style="display: flex; gap: 8px;">
+            <div class="filter-tag active">全部</div>
+            <div class="filter-tag">收入</div>
+            <div class="filter-tag">支出</div>
+          </div>
+        </div>
+        
+        <!-- 交易项 1 -->
+        <div class="list-item" style="display: flex; align-items: center;">
+          <div style="margin-right: 16px; width: 40px; height: 40px; border-radius: 20px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-gas-pump" style="color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">油卡充值</div>
+            <div class="list-item-subtitle">京A12345 | 王师傅</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-weight: 500; color: var(--error-red);">- ¥1,200.00</div>
+            <div style="font-size: 12px; color: var(--dark-gray);">2023-09-15</div>
+          </div>
+        </div>
+        
+        <!-- 交易项 2 -->
+        <div class="list-item" style="display: flex; align-items: center;">
+          <div style="margin-right: 16px; width: 40px; height: 40px; border-radius: 20px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-tools" style="color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">车辆维修</div>
+            <div class="list-item-subtitle">粤B67890 | 发动机故障</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-weight: 500; color: var(--error-red);">- ¥3,450.00</div>
+            <div style="font-size: 12px; color: var(--dark-gray);">2023-09-14</div>
+          </div>
+        </div>
+        
+        <!-- 交易项 3 -->
+        <div class="list-item" style="display: flex; align-items: center;">
+          <div style="margin-right: 16px; width: 40px; height: 40px; border-radius: 20px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-money-bill-wave" style="color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">运费收入</div>
+            <div class="list-item-subtitle">任务 #T3415 | 家具配送</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-weight: 500; color: var(--success-green);">+ ¥8,500.00</div>
+            <div style="font-size: 12px; color: var(--dark-gray);">2023-09-14</div>
+          </div>
+        </div>
+        
+        <!-- 交易项 4 -->
+        <div class="list-item" style="display: flex; align-items: center;">
+          <div style="margin-right: 16px; width: 40px; height: 40px; border-radius: 20px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-road" style="color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">ETC扣款</div>
+            <div class="list-item-subtitle">沪C54321 | 上海-苏州</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-weight: 500; color: var(--error-red);">- ¥120.00</div>
+            <div style="font-size: 12px; color: var(--dark-gray);">2023-09-13</div>
+          </div>
+        </div>
+        
+        <!-- 交易项 5 -->
+        <div class="list-item" style="display: flex; align-items: center;">
+          <div style="margin-right: 16px; width: 40px; height: 40px; border-radius: 20px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-money-bill-wave" style="color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">运费收入</div>
+            <div class="list-item-subtitle">任务 #T3412 | 电子设备运输</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-weight: 500; color: var(--success-green);">+ ¥12,300.00</div>
+            <div style="font-size: 12px; color: var(--dark-gray);">2023-09-12</div>
+          </div>
+        </div>
+        
+        <div style="padding: 12px; text-align: center;">
+          <a href="#" style="color: var(--primary-blue); text-decoration: none; font-size: 14px;">查看更多 <i class="fas fa-arrow-right" style="font-size: 12px;"></i></a>
+        </div>
+      </div>
+      
+      <!-- 金融产品 -->
+      <div class="card">
+        <div class="card-title">金融产品</div>
+        
+        <!-- 贷款产品 -->
+        <div style="margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="font-weight: 500;">车辆贷款</div>
+            <a href="#" style="color: var(--primary-blue); text-decoration: none; font-size: 14px;">查看全部</a>
+          </div>
+          <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 12px;">
+            <div style="min-width: 200px; border: 1px solid var(--medium-gray); border-radius: 8px; padding: 16px;">
+              <div style="font-weight: 500; margin-bottom: 8px;">新能源车辆贷款</div>
+              <div style="font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">年利率低至4.5%，最长5年</div>
+              <button class="btn btn-primary" style="width: 100%; padding: 8px 0; font-size: 12px;">立即申请</button>
+            </div>
+            <div style="min-width: 200px; border: 1px solid var(--medium-gray); border-radius: 8px; padding: 16px;">
+              <div style="font-weight: 500; margin-bottom: 8px;">重卡专享贷款</div>
+              <div style="font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">最高可贷300万，手续费低</div>
+              <button class="btn btn-primary" style="width: 100%; padding: 8px 0; font-size: 12px;">立即申请</button>
+            </div>
+            <div style="min-width: 200px; border: 1px solid var(--medium-gray); border-radius: 8px; padding: 16px;">
+              <div style="font-weight: 500; margin-bottom: 8px;">车队扩建贷款</div>
+              <div style="font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">灵活还款，批量购车优惠</div>
+              <button class="btn btn-primary" style="width: 100%; padding: 8px 0; font-size: 12px;">立即申请</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 保险产品 -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="font-weight: 500;">车辆保险</div>
+            <a href="admin-insurance.html" style="color: var(--primary-blue); text-decoration: none; font-size: 14px;">查看全部</a>
+          </div>
+          <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 12px;">
+            <div style="min-width: 200px; border: 1px solid var(--medium-gray); border-radius: 8px; padding: 16px;">
+              <div style="font-weight: 500; margin-bottom: 8px;">车队综合险</div>
+              <div style="font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">车损+第三方责任+货物损失</div>
+              <button class="btn btn-primary" style="width: 100%; padding: 8px 0; font-size: 12px;">了解详情</button>
+            </div>
+            <div style="min-width: 200px; border: 1px solid var(--medium-gray); border-radius: 8px; padding: 16px;">
+              <div style="font-weight: 500; margin-bottom: 8px;">货物运输险</div>
+              <div style="font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">全程保障，理赔便捷</div>
+              <button class="btn btn-primary" style="width: 100%; padding: 8px 0; font-size: 12px;">了解详情</button>
+            </div>
+            <div style="min-width: 200px; border: 1px solid var(--medium-gray); border-radius: 8px; padding: 16px;">
+              <div style="font-weight: 500; margin-bottom: 8px;">司机意外险</div>
+              <div style="font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">提供司机意外伤害保障</div>
+              <button class="btn btn-primary" style="width: 100%; padding: 8px 0; font-size: 12px;">了解详情</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+      <a href="admin-dashboard.html" class="nav-item">
+        <i class="fas fa-home nav-icon"></i>
+        <span>首页</span>
+      </a>
+      <a href="admin-vehicles.html" class="nav-item">
+        <i class="fas fa-truck nav-icon"></i>
+        <span>车辆</span>
+      </a>
+      <a href="admin-dispatch.html" class="nav-item">
+        <i class="fas fa-clipboard-list nav-icon"></i>
+        <span>任务</span>
+      </a>
+      <a href="admin-service.html" class="nav-item">
+        <i class="fas fa-headset nav-icon"></i>
+        <span>服务</span>
+      </a>
+      <a href="admin-finance.html" class="nav-item active">
+        <i class="fas fa-wallet nav-icon"></i>
+        <span>金融</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html> 

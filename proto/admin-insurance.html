@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 保险服务</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+      <div class="header-title">保险服务</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-bell"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 保险概览 -->
+      <div class="card">
+        <div class="card-title">保险概览</div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px;">
+          <div class="stat-card">
+            <div class="stat-value">35</div>
+            <div class="stat-label">已投保车辆</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">3</div>
+            <div class="stat-label">待续保车辆</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">5</div>
+            <div class="stat-label">本月理赔</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">¥42.8万</div>
+            <div class="stat-label">年保费总额</div>
+          </div>
+        </div>
+        
+        <div style="padding: 16px; background-color: var(--light-blue); border-radius: 8px; margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <i class="fas fa-exclamation-circle" style="color: var(--primary-blue); margin-right: 8px;"></i>
+            <div style="font-weight: 500;">近期需要处理的保险事项</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px; background-color: white; border-radius: 4px;">
+              <div>
+                <div style="font-weight: 500;">车辆续保提醒</div>
+                <div style="font-size: 12px; color: var(--dark-gray);">京A12345 | 交强险将于10天后到期</div>
+              </div>
+              <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;">立即续保</button>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px; background-color: white; border-radius: 4px;">
+              <div>
+                <div style="font-weight: 500;">理赔申请审核</div>
+                <div style="font-size: 12px; color: var(--dark-gray);">粤B67890 | 交通事故理赔申请</div>
+              </div>
+              <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;">查看详情</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 标签页导航 -->
+      <div class="tabs">
+        <div class="tab active">车辆保险</div>
+        <div class="tab">理赔记录</div>
+        <div class="tab">保险方案</div>
+      </div>
+      
+      <!-- 车辆保险列表 -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div class="card-title" style="margin-bottom: 0;">车辆保险情况</div>
+          <div>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px; display: flex; align-items: center; gap: 4px;">
+              <i class="fas fa-plus"></i> 新增保险
+            </button>
+          </div>
+        </div>
+        
+        <!-- 筛选标签 -->
+        <div class="filter-tags" style="margin-bottom: 16px;">
+          <div class="filter-tag active">全部</div>
+          <div class="filter-tag">有效</div>
+          <div class="filter-tag">即将到期</div>
+          <div class="filter-tag">已过期</div>
+        </div>
+        
+        <!-- 车辆保险项 1 -->
+        <div class="list-item" style="padding: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-weight: 500;">京A12345 | 重型卡车</div>
+            <span class="status-badge status-warning" style="background-color: #fff8e1; color: var(--warning-yellow);">即将到期</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px;">
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">交强险</div>
+              <div style="font-size: 14px;">到期日: 2023-09-25</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">商业险</div>
+              <div style="font-size: 14px;">到期日: 2023-09-25</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">保险公司</div>
+              <div style="font-size: 14px;">中国人保</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">年保费</div>
+              <div style="font-size: 14px;">¥15,620</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;">续保</button>
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">查看详情</button>
+          </div>
+        </div>
+        
+        <!-- 车辆保险项 2 -->
+        <div class="list-item" style="padding: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-weight: 500;">粤B67890 | 厢式货车</div>
+            <span class="status-badge status-active">有效</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px;">
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">交强险</div>
+              <div style="font-size: 14px;">到期日: 2024-05-18</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">商业险</div>
+              <div style="font-size: 14px;">到期日: 2024-05-18</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">保险公司</div>
+              <div style="font-size: 14px;">平安保险</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">年保费</div>
+              <div style="font-size: 14px;">¥12,450</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">查看详情</button>
+          </div>
+        </div>
+        
+        <!-- 车辆保险项 3 -->
+        <div class="list-item" style="padding: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-weight: 500;">沪C54321 | 冷藏车</div>
+            <span class="status-badge status-active">有效</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px;">
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">交强险</div>
+              <div style="font-size: 14px;">到期日: 2024-03-30</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">商业险</div>
+              <div style="font-size: 14px;">到期日: 2024-03-30</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">保险公司</div>
+              <div style="font-size: 14px;">太平洋保险</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; color: var(--dark-gray);">年保费</div>
+              <div style="font-size: 14px;">¥18,750</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">查看详情</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 推荐保险产品 -->
+      <div class="card">
+        <div class="card-title">推荐保险产品</div>
+        <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 12px;">
+          <div style="min-width: 280px; border: 1px solid var(--medium-gray); border-radius: 8px; padding: 16px;">
+            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+              <img src="https://i.ibb.co/n1j2vYS/picc-logo.png" style="width: 40px; height: 40px; object-fit: contain; margin-right: 12px;">
+              <div>
+                <div style="font-weight: 500;">中国人保 - 车队综合险</div>
+                <div style="font-size: 12px; color: var(--dark-gray);">车损+第三方责任+货物损失</div>
+              </div>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <div style="font-size: 12px; color: var(--dark-gray); margin-bottom: 4px;">主要保障</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                <span style="font-size: 12px; padding: 2px 8px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 4px;">车辆损失险</span>
+                <span style="font-size: 12px; padding: 2px 8px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 4px;">第三者责任险</span>
+                <span style="font-size: 12px; padding: 2px 8px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 4px;">货物运输险</span>
+                <span style="font-size: 12px; padding: 2px 8px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 4px;">司机责任险</span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+              <div style="flex: 1;">
+                <div style="font-size: 12px; color: var(--dark-gray);">车队折扣</div>
+                <div style="font-weight: 500; color: var(--error-red);">8.5折起</div>
+              </div>
+              <div style="flex: 1;">
+                <div style="font-size: 12px; color: var(--dark-gray);">理赔时效</div>
+                <div style="font-weight: 500;">极速理赔</div>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">获取报价</button>
+          </div>
+          
+          <div style="min-width: 280px; border: 1px solid var(--medium-gray); border-radius: 8px; padding: 16px;">
+            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+              <img src="https://i.ibb.co/2gG5kdf/pingan-logo.png" style="width: 40px; height: 40px; object-fit: contain; margin-right: 12px;">
+              <div>
+                <div style="font-weight: 500;">平安保险 - 货运专线保障</div>
+                <div style="font-size: 12px; color: var(--dark-gray);">专为长途物流设计的保险方案</div>
+              </div>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <div style="font-size: 12px; color: var(--dark-gray); margin-bottom: 4px;">主要保障</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                <span style="font-size: 12px; padding: 2px 8px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 4px;">车辆损失险</span>
+                <span style="font-size: 12px; padding: 2px 8px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 4px;">盗抢险</span>
+                <span style="font-size: 12px; padding: 2px 8px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 4px;">高速救援</span>
+                <span style="font-size: 12px; padding: 2px 8px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 4px;">车上人员险</span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+              <div style="flex: 1;">
+                <div style="font-size: 12px; color: var(--dark-gray);">车队折扣</div>
+                <div style="font-weight: 500; color: var(--error-red);">8折起</div>
+              </div>
+              <div style="flex: 1;">
+                <div style="font-size: 12px; color: var(--dark-gray);">理赔时效</div>
+                <div style="font-weight: 500;">1-3个工作日</div>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">获取报价</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 理赔服务 -->
+      <div class="card">
+        <div class="card-title">理赔服务</div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 48px; height: 48px; border-radius: 24px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-file-alt" style="font-size: 20px; color: var(--primary-blue);"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="font-weight: 500;">在线理赔申请</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">快速提交理赔材料，在线跟踪进度</div>
+            </div>
+            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">申请理赔</button>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 48px; height: 48px; border-radius: 24px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-file-invoice" style="font-size: 20px; color: var(--primary-blue);"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="font-weight: 500;">理赔记录查询</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">查看历史理赔记录和详情</div>
+            </div>
+            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 14px;">查看记录</button>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 48px; height: 48px; border-radius: 24px; background-color: var(--light-blue); display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-headset" style="font-size: 20px; color: var(--primary-blue);"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="font-weight: 500;">理赔咨询</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">专业理赔顾问在线解答疑问</div>
+            </div>
+            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 14px;">在线咨询</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+      <a href="admin-dashboard.html" class="nav-item">
+        <i class="fas fa-home nav-icon"></i>
+        <span>首页</span>
+      </a>
+      <a href="admin-vehicles.html" class="nav-item">
+        <i class="fas fa-truck nav-icon"></i>
+        <span>车辆</span>
+      </a>
+      <a href="admin-dispatch.html" class="nav-item">
+        <i class="fas fa-clipboard-list nav-icon"></i>
+        <span>任务</span>
+      </a>
+      <a href="admin-service.html" class="nav-item">
+        <i class="fas fa-headset nav-icon"></i>
+        <span>服务</span>
+      </a>
+      <a href="admin-finance.html" class="nav-item active">
+        <i class="fas fa-wallet nav-icon"></i>
+        <span>金融</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html> 

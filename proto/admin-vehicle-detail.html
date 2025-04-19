@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 车辆详情</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+      <div class="header-title">车辆详情</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 车辆基本信息 -->
+      <div class="vehicle-card" style="padding: 20px; margin-bottom: 20px;">
+        <div style="display: flex; align-items: center; margin-bottom: 16px;">
+          <i class="fas fa-truck-moving" style="font-size: 40px; color: var(--primary-blue); margin-right: 16px;"></i>
+          <div>
+            <div style="font-size: 20px; font-weight: bold;">京A12345</div>
+            <div style="color: var(--dark-gray);">重型卡车 | 东风天龙</div>
+          </div>
+          <div style="margin-left: auto;">
+            <span class="status-badge status-active">在途</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+          <div>
+            <div style="color: var(--dark-gray); font-size: 12px;">司机</div>
+            <div style="font-weight: 500;">王师傅</div>
+          </div>
+          <div>
+            <div style="color: var(--dark-gray); font-size: 12px;">购入日期</div>
+            <div style="font-weight: 500;">2022-06-15</div>
+          </div>
+          <div>
+            <div style="color: var(--dark-gray); font-size: 12px;">总里程</div>
+            <div style="font-weight: 500;">78,342 公里</div>
+          </div>
+          <div>
+            <div style="color: var(--dark-gray); font-size: 12px;">燃油状态</div>
+            <div style="font-weight: 500; display: flex; align-items: center;">
+              <div style="flex: 1; height: 6px; background-color: var(--medium-gray); border-radius: 3px; margin-right: 8px;">
+                <div style="width: 75%; height: 100%; background-color: var(--primary-blue); border-radius: 3px;"></div>
+              </div>
+              75%
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 当前位置和状态 -->
+      <div class="card">
+        <div class="card-title">当前位置和状态</div>
+        <div class="map-container" style="height: 200px; background-image: url('https://i.ibb.co/QJfWRcM/vehicle-location.jpg'); background-size: cover; background-position: center;"></div>
+        <div style="padding: 16px 0;">
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <i class="fas fa-map-marker-alt" style="color: var(--primary-blue); margin-right: 12px; font-size: 20px;"></i>
+            <div>
+              <div style="font-weight: 500;">北京市顺义区机场高速G4</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">更新于：2023-09-15 14:30</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <i class="fas fa-route" style="color: var(--primary-blue); margin-right: 12px; font-size: 20px;"></i>
+            <div>
+              <div style="font-weight: 500;">当前任务：北京 → 天津</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">预计到达时间：2023-09-15 17:15</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 标签页导航 -->
+      <div class="tabs">
+        <div class="tab active">基本信息</div>
+        <div class="tab">维护记录</div>
+        <div class="tab">行驶轨迹</div>
+      </div>
+      
+      <!-- 基本信息标签页内容 -->
+      <div class="card">
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 500; margin-bottom: 8px;">车辆信息</div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">车辆类型</div>
+              <div>重型卡车</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">品牌型号</div>
+              <div>东风天龙 KL</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">载重</div>
+              <div>25吨</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">尺寸</div>
+              <div>12.5 × 2.5 × 3.8 米</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">发动机号</div>
+              <div>DF12345678</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">车架号</div>
+              <div>LGAX5DC43M1234567</div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 500; margin-bottom: 8px;">证照信息</div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">行驶证到期</div>
+              <div>2024-05-20</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">运营证到期</div>
+              <div>2024-03-15</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">保险到期</div>
+              <div>2024-06-30</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">年检日期</div>
+              <div>2023-11-10</div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div style="font-weight: 500; margin-bottom: 8px;">设备信息</div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">GPS设备</div>
+              <div>已安装 (ID: GP78901)</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">车载终端</div>
+              <div>已安装 (ID: VT45678)</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">ETC卡</div>
+              <div>已绑定 (余额: ¥1,245)</div>
+            </div>
+            <div>
+              <div style="color: var(--dark-gray); font-size: 12px;">油卡</div>
+              <div>已绑定 (余额: ¥3,560)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 操作按钮 -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0;">
+        <button class="btn btn-primary" style="display: flex; justify-content: center; align-items: center;">
+          <i class="fas fa-clipboard-list" style="margin-right: 8px;"></i> 分配任务
+        </button>
+        <button class="btn btn-secondary" style="display: flex; justify-content: center; align-items: center;">
+          <i class="fas fa-history" style="margin-right: 8px;"></i> 查看历史任务
+        </button>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;">
+        <button class="btn btn-secondary" style="display: flex; flex-direction: column; align-items: center; padding: 12px;">
+          <i class="fas fa-wrench" style="margin-bottom: 8px;"></i>
+          <span style="font-size: 12px;">报修</span>
+        </button>
+        <button class="btn btn-secondary" style="display: flex; flex-direction: column; align-items: center; padding: 12px;">
+          <i class="fas fa-file-alt" style="margin-bottom: 8px;"></i>
+          <span style="font-size: 12px;">证件管理</span>
+        </button>
+        <button class="btn btn-secondary" style="display: flex; flex-direction: column; align-items: center; padding: 12px;">
+          <i class="fas fa-exchange-alt" style="margin-bottom: 8px;"></i>
+          <span style="font-size: 12px;">更换司机</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 任务调度</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <div class="header-title">任务调度</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 搜索栏 -->
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="搜索任务编号或目的地" class="search-input">
+      </div>
+      
+      <!-- 筛选标签 -->
+      <div class="filter-tags">
+        <div class="filter-tag active">全部</div>
+        <div class="filter-tag">待分配</div>
+        <div class="filter-tag">进行中</div>
+        <div class="filter-tag">已完成</div>
+        <div class="filter-tag">异常</div>
+      </div>
+      
+      <!-- 任务统计 -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">42</div>
+          <div class="stat-label">本月任务</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">9</div>
+          <div class="stat-label">待分配</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">24</div>
+          <div class="stat-label">进行中</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3</div>
+          <div class="stat-label">异常</div>
+        </div>
+      </div>
+      
+      <!-- 标签页导航 -->
+      <div class="tabs">
+        <div class="tab active">所有任务</div>
+        <div class="tab">今日派车</div>
+        <div class="tab">配送路线</div>
+      </div>
+      
+      <!-- 任务列表 -->
+      <div class="card">
+        <div class="card-title">任务列表</div>
+        
+        <!-- 任务项 1 -->
+        <div class="list-item" style="padding: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-weight: 500;">货物配送 #T3421</div>
+            <span class="status-badge status-pending">待分配</span>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <div style="flex: 1;">
+              <div style="font-weight: 500; font-size: 14px;">北京市海淀区</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">装货点</div>
+            </div>
+            <i class="fas fa-arrow-right" style="margin: 0 16px; color: var(--dark-gray);"></i>
+            <div style="flex: 1;">
+              <div style="font-weight: 500; font-size: 14px;">天津市西青区</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">卸货点</div>
+            </div>
+          </div>
+          <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">
+            <span style="margin-right: 16px;"><i class="fas fa-calendar-alt" style="margin-right: 4px;"></i>2023-09-18</span>
+            <span style="margin-right: 16px;"><i class="fas fa-truck" style="margin-right: 4px;"></i>需要3辆车</span>
+            <span><i class="fas fa-weight" style="margin-right: 4px;"></i>总重量: 45吨</span>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;">分配车辆</button>
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">查看详情</button>
+          </div>
+        </div>
+        
+        <!-- 任务项 2 -->
+        <div class="list-item" style="padding: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-weight: 500;">设备运输 #T3419</div>
+            <span class="status-badge status-active">进行中</span>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <div style="flex: 1;">
+              <div style="font-weight: 500; font-size: 14px;">上海市浦东新区</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">装货点</div>
+            </div>
+            <i class="fas fa-arrow-right" style="margin: 0 16px; color: var(--dark-gray);"></i>
+            <div style="flex: 1;">
+              <div style="font-weight: 500; font-size: 14px;">苏州市工业园区</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">卸货点</div>
+            </div>
+          </div>
+          <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">
+            <span style="margin-right: 16px;"><i class="fas fa-calendar-alt" style="margin-right: 4px;"></i>2023-09-17 ~ 09-18</span>
+            <span style="margin-right: 16px;"><i class="fas fa-truck" style="margin-right: 4px;"></i>已分配1辆车</span>
+            <span><i class="fas fa-user" style="margin-right: 4px;"></i>李师傅</span>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;">跟踪位置</button>
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">查看详情</button>
+          </div>
+        </div>
+        
+        <!-- 任务项 3 -->
+        <div class="list-item" style="padding: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-weight: 500;">原材料配送 #T3417</div>
+            <span class="status-badge status-issue">需关注</span>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <div style="flex: 1;">
+              <div style="font-weight: 500; font-size: 14px;">深圳市南山区</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">装货点</div>
+            </div>
+            <i class="fas fa-arrow-right" style="margin: 0 16px; color: var(--dark-gray);"></i>
+            <div style="flex: 1;">
+              <div style="font-weight: 500; font-size: 14px;">东莞市松山湖</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">卸货点</div>
+            </div>
+          </div>
+          <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">
+            <span style="margin-right: 16px;"><i class="fas fa-calendar-alt" style="margin-right: 4px;"></i>2023-09-16 ~ 09-17</span>
+            <span style="margin-right: 16px;"><i class="fas fa-truck" style="margin-right: 4px;"></i>已分配2辆车</span>
+            <span><i class="fas fa-exclamation-triangle" style="margin-right: 4px; color: var(--error-red);"></i>车辆故障</span>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button class="btn btn-danger" style="padding: 6px 12px; font-size: 12px;">处理异常</button>
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">查看详情</button>
+          </div>
+        </div>
+        
+        <!-- 任务项 4 -->
+        <div class="list-item" style="padding: 16px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-weight: 500;">家具配送 #T3415</div>
+            <span class="status-badge status-completed">已完成</span>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <div style="flex: 1;">
+              <div style="font-weight: 500; font-size: 14px;">广州市番禺区</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">装货点</div>
+            </div>
+            <i class="fas fa-arrow-right" style="margin: 0 16px; color: var(--dark-gray);"></i>
+            <div style="flex: 1;">
+              <div style="font-weight: 500; font-size: 14px;">佛山市顺德区</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">卸货点</div>
+            </div>
+          </div>
+          <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-bottom: 12px;">
+            <span style="margin-right: 16px;"><i class="fas fa-calendar-alt" style="margin-right: 4px;"></i>2023-09-15</span>
+            <span style="margin-right: 16px;"><i class="fas fa-check-circle" style="margin-right: 4px; color: var(--success-green);"></i>准时完成</span>
+            <span><i class="fas fa-star" style="margin-right: 4px; color: var(--warning-yellow);"></i>5星评价</span>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">查看详情</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 悬浮按钮 -->
+      <div style="position: fixed; bottom: 80px; right: 24px; z-index: 100;">
+        <a href="admin-create-task.html">
+          <button style="width: 56px; height: 56px; border-radius: 28px; background-color: var(--primary-blue); border: none; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-plus" style="font-size: 24px;"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+      <a href="admin-dashboard.html" class="nav-item">
+        <i class="fas fa-home nav-icon"></i>
+        <span>首页</span>
+      </a>
+      <a href="admin-vehicles.html" class="nav-item">
+        <i class="fas fa-truck nav-icon"></i>
+        <span>车辆</span>
+      </a>
+      <a href="admin-dispatch.html" class="nav-item active">
+        <i class="fas fa-clipboard-list nav-icon"></i>
+        <span>任务</span>
+      </a>
+      <a href="admin-service.html" class="nav-item">
+        <i class="fas fa-headset nav-icon"></i>
+        <span>服务</span>
+      </a>
+      <a href="admin-finance.html" class="nav-item">
+        <i class="fas fa-wallet nav-icon"></i>
+        <span>金融</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 车辆管理</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <div class="header-title">车辆管理</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 搜索栏 -->
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="搜索车牌号或车型" class="search-input">
+      </div>
+      
+      <!-- 筛选标签 -->
+      <div class="filter-tags">
+        <div class="filter-tag active">全部</div>
+        <div class="filter-tag">在途</div>
+        <div class="filter-tag">空闲</div>
+        <div class="filter-tag">维修中</div>
+        <div class="filter-tag">报废</div>
+      </div>
+      
+      <!-- 车辆统计 -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">35</div>
+          <div class="stat-label">车辆总数</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">24</div>
+          <div class="stat-label">在途车辆</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">9</div>
+          <div class="stat-label">空闲车辆</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2</div>
+          <div class="stat-label">维修车辆</div>
+        </div>
+      </div>
+      
+      <!-- 车辆列表 -->
+      <div class="card">
+        <div class="card-title">车辆列表</div>
+        
+        <!-- 车辆项 1 -->
+        <a href="admin-vehicle-detail.html" class="list-item" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-truck" style="font-size: 24px; color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">京A12345</div>
+            <div class="list-item-subtitle">重型卡车 | 王师傅</div>
+            <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-top: 4px;">
+              <span style="margin-right: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i>北京</span>
+              <span><i class="fas fa-gas-pump" style="margin-right: 4px;"></i>75%</span>
+            </div>
+          </div>
+          <div>
+            <span class="status-badge status-active">在途</span>
+          </div>
+        </a>
+        
+        <!-- 车辆项 2 -->
+        <a href="admin-vehicle-detail.html" class="list-item" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-truck" style="font-size: 24px; color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">粤B67890</div>
+            <div class="list-item-subtitle">厢式货车 | 李师傅</div>
+            <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-top: 4px;">
+              <span style="margin-right: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i>广州</span>
+              <span><i class="fas fa-gas-pump" style="margin-right: 4px;"></i>45%</span>
+            </div>
+          </div>
+          <div>
+            <span class="status-badge status-active">在途</span>
+          </div>
+        </a>
+        
+        <!-- 车辆项 3 -->
+        <a href="admin-vehicle-detail.html" class="list-item" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-truck" style="font-size: 24px; color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">沪C54321</div>
+            <div class="list-item-subtitle">冷藏车 | 张师傅</div>
+            <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-top: 4px;">
+              <span style="margin-right: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i>上海</span>
+              <span><i class="fas fa-gas-pump" style="margin-right: 4px;"></i>90%</span>
+            </div>
+          </div>
+          <div>
+            <span class="status-badge" style="background-color: #e8f5e9; color: var(--success-green);">空闲</span>
+          </div>
+        </a>
+        
+        <!-- 车辆项 4 -->
+        <a href="admin-vehicle-detail.html" class="list-item" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-truck" style="font-size: 24px; color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">津D13579</div>
+            <div class="list-item-subtitle">平板车 | 未分配</div>
+            <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-top: 4px;">
+              <span style="margin-right: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i>天津</span>
+              <span><i class="fas fa-gas-pump" style="margin-right: 4px;"></i>65%</span>
+            </div>
+          </div>
+          <div>
+            <span class="status-badge" style="background-color: #e8f5e9; color: var(--success-green);">空闲</span>
+          </div>
+        </a>
+        
+        <!-- 车辆项 5 -->
+        <a href="admin-vehicle-detail.html" class="list-item" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-truck" style="font-size: 24px; color: var(--primary-blue);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">浙E24680</div>
+            <div class="list-item-subtitle">重型卡车 | 赵师傅</div>
+            <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-top: 4px;">
+              <span style="margin-right: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i>杭州</span>
+              <span><i class="fas fa-wrench" style="margin-right: 4px;"></i>发动机</span>
+            </div>
+          </div>
+          <div>
+            <span class="status-badge" style="background-color: #fff8e1; color: var(--warning-yellow);">维修中</span>
+          </div>
+        </a>
+      </div>
+      
+      <!-- 报废/闲置车辆 -->
+      <div class="card">
+        <div class="card-title">报废/闲置车辆</div>
+        
+        <a href="admin-vehicle-detail.html" class="list-item" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-truck" style="font-size: 24px; color: var(--dark-gray);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">渝F98765</div>
+            <div class="list-item-subtitle">厢式货车 | 闲置3个月</div>
+            <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-top: 4px;">
+              <span style="margin-right: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i>重庆</span>
+              <span><i class="fas fa-calendar-alt" style="margin-right: 4px;"></i>2023年购入</span>
+            </div>
+          </div>
+          <div>
+            <span class="status-badge" style="background-color: #f5f5f5; color: var(--dark-gray);">闲置</span>
+          </div>
+        </a>
+        
+        <a href="admin-vehicle-detail.html" class="list-item" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-truck" style="font-size: 24px; color: var(--dark-gray);"></i>
+          </div>
+          <div class="list-item-content">
+            <div class="list-item-title">鲁G87654</div>
+            <div class="list-item-subtitle">平板车 | 已报废</div>
+            <div style="display: flex; font-size: 12px; color: var(--dark-gray); margin-top: 4px;">
+              <span style="margin-right: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 4px;"></i>济南</span>
+              <span><i class="fas fa-calendar-alt" style="margin-right: 4px;"></i>2018年购入</span>
+            </div>
+          </div>
+          <div>
+            <span class="status-badge status-issue">已报废</span>
+          </div>
+        </a>
+      </div>
+      
+      <!-- 悬浮按钮 -->
+      <div style="position: fixed; bottom: 80px; right: 24px; z-index: 100;">
+        <button style="width: 56px; height: 56px; border-radius: 28px; background-color: var(--primary-blue); border: none; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-plus" style="font-size: 24px;"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+      <a href="admin-dashboard.html" class="nav-item">
+        <i class="fas fa-home nav-icon"></i>
+        <span>首页</span>
+      </a>
+      <a href="admin-vehicles.html" class="nav-item active">
+        <i class="fas fa-truck nav-icon"></i>
+        <span>车辆</span>
+      </a>
+      <a href="admin-dispatch.html" class="nav-item">
+        <i class="fas fa-clipboard-list nav-icon"></i>
+        <span>任务</span>
+      </a>
+      <a href="admin-service.html" class="nav-item">
+        <i class="fas fa-headset nav-icon"></i>
+        <span>服务</span>
+      </a>
+      <a href="admin-finance.html" class="nav-item">
+        <i class="fas fa-wallet nav-icon"></i>
+        <span>金融</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html> 

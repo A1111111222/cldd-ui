@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 服务请求详情</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+      <div class="header-title">服务请求详情</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 服务请求基本信息 -->
+      <div class="card" style="margin-bottom: 20px; position: relative;">
+        <div style="position: absolute; top: 16px; right: 16px;">
+          <span class="status-badge status-issue">紧急</span>
+        </div>
+        <div style="display: flex; align-items: center; margin-bottom: 16px;">
+          <div style="margin-right: 16px;">
+            <i class="fas fa-car-crash" style="font-size: 32px; color: var(--error-red);"></i>
+          </div>
+          <div>
+            <div style="font-size: 18px; font-weight: 500;">车辆故障 #S1024</div>
+            <div style="color: var(--dark-gray); font-size: 14px;">10分钟前提交</div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px;">
+          <div>
+            <div style="color: var(--dark-gray); font-size: 12px;">车牌号</div>
+            <div style="font-weight: 500;">粤B12345</div>
+          </div>
+          <div>
+            <div style="color: var(--dark-gray); font-size: 12px;">车型</div>
+            <div style="font-weight: 500;">厢式货车</div>
+          </div>
+          <div>
+            <div style="color: var(--dark-gray); font-size: 12px;">司机</div>
+            <div style="font-weight: 500;">张师傅</div>
+          </div>
+          <div>
+            <div style="color: var(--dark-gray); font-size: 12px;">联系电话</div>
+            <div style="font-weight: 500;">138****5678</div>
+          </div>
+        </div>
+        <div>
+          <div style="color: var(--dark-gray); font-size: 12px;">位置</div>
+          <div style="font-weight: 500;">广州市花都区S15高速公路</div>
+        </div>
+      </div>
+      
+      <!-- 地图位置 -->
+      <div class="card">
+        <div class="card-title">故障位置</div>
+        <div class="map-container" style="height: 200px; background-image: url('https://i.ibb.co/vZJLMNV/breakdown-location.jpg'); background-size: cover; background-position: center;"></div>
+        <div style="display: flex; justify-content: space-between; padding: 12px 0;">
+          <button class="btn btn-secondary" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fas fa-directions"></i> 导航路线
+          </button>
+          <button class="btn btn-secondary" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fas fa-phone"></i> 联系司机
+          </button>
+        </div>
+      </div>
+      
+      <!-- 故障详情 -->
+      <div class="card">
+        <div class="card-title">故障详情</div>
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 500; margin-bottom: 8px;">故障描述</div>
+          <div style="color: var(--black); line-height: 1.6;">
+            发动机突然熄火，无法启动，仪表盘显示发动机故障灯常亮。车辆目前停靠在高速应急车道，已放置警示牌。需要紧急救援。
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 500; margin-bottom: 8px;">故障图片</div>
+          <div style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px;">
+            <img src="https://i.ibb.co/WkQMTF2/car-breakdown1.jpg" style="width: 120px; height: 80px; object-fit: cover; border-radius: 4px;">
+            <img src="https://i.ibb.co/4tYq89V/car-breakdown2.jpg" style="width: 120px; height: 80px; object-fit: cover; border-radius: 4px;">
+            <img src="https://i.ibb.co/ZmZMpKq/car-breakdown3.jpg" style="width: 120px; height: 80px; object-fit: cover; border-radius: 4px;">
+          </div>
+        </div>
+        
+        <div>
+          <div style="font-weight: 500; margin-bottom: 8px;">任务信息</div>
+          <div style="display: flex; align-items: center; background-color: var(--light-gray); padding: 12px; border-radius: 8px;">
+            <i class="fas fa-clipboard-list" style="font-size: 24px; color: var(--primary-blue); margin-right: 12px;"></i>
+            <div>
+              <div style="font-weight: 500;">原材料配送 #T3417</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">深圳市南山区 → 东莞市松山湖</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 处理进度 -->
+      <div class="card">
+        <div class="card-title">处理进度</div>
+        <div class="timeline">
+          <div class="timeline-item completed">
+            <div class="timeline-time">09:15</div>
+            <div class="timeline-title">收到服务请求</div>
+            <div class="timeline-description">系统自动创建服务工单</div>
+          </div>
+          <div class="timeline-item completed">
+            <div class="timeline-time">09:18</div>
+            <div class="timeline-title">客服确认</div>
+            <div class="timeline-description">李客服已电话联系司机确认情况</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">09:25</div>
+            <div class="timeline-title">分配救援队伍</div>
+            <div class="timeline-description">已联系附近的广州市花都区救援点</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">--:--</div>
+            <div class="timeline-title">救援队伍到达</div>
+            <div class="timeline-description">等待救援队伍到达现场</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">--:--</div>
+            <div class="timeline-title">故障处理</div>
+            <div class="timeline-description">进行故障诊断和修复</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">--:--</div>
+            <div class="timeline-title">服务完成</div>
+            <div class="timeline-description">故障排除，车辆恢复正常</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 处理措施 -->
+      <div class="card">
+        <div class="card-title">处理措施</div>
+        <div class="input-group">
+          <label for="solution" class="input-label">解决方案</label>
+          <select id="solution" class="input-field">
+            <option value="">选择解决方案</option>
+            <option value="1">现场修复</option>
+            <option value="2">拖车到就近维修点</option>
+            <option value="3">更换备用车辆</option>
+            <option value="4">任务转派其他车辆</option>
+          </select>
+        </div>
+        
+        <div class="input-group">
+          <label for="team" class="input-label">救援队伍</label>
+          <select id="team" class="input-field">
+            <option value="">选择救援队伍</option>
+            <option value="1">广州花都救援点</option>
+            <option value="2">广州白云救援点</option>
+            <option value="3">第三方救援公司</option>
+          </select>
+        </div>
+        
+        <div class="input-group">
+          <label for="notes" class="input-label">处理备注</label>
+          <textarea id="notes" class="input-field" placeholder="输入处理备注信息" style="height: 80px; resize: none;"></textarea>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; margin-top: 16px;">
+          <div style="display: flex; align-items: center; color: var(--dark-gray);">
+            <i class="fas fa-exclamation-triangle" style="margin-right: 8px; color: var(--warning-yellow);"></i>
+            <span style="font-size: 14px;">预计处理时间: 1-2小时</span>
+          </div>
+          <div>
+            <button class="btn btn-primary" style="padding: 8px 16px;">确认处理</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 备选措施 -->
+      <div class="card">
+        <div class="card-title">备选措施</div>
+        <div style="padding: 12px 0;">
+          <div style="display: flex; align-items: center; margin-bottom: 16px;">
+            <i class="fas fa-exchange-alt" style="font-size: 20px; color: var(--primary-blue); margin-right: 12px;"></i>
+            <div style="flex: 1;">
+              <div style="font-weight: 500;">更换备用车辆</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">从附近调配备用车辆接替任务</div>
+            </div>
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">查看可用车辆</button>
+          </div>
+          
+          <div style="display: flex; align-items: center; margin-bottom: 16px;">
+            <i class="fas fa-retweet" style="font-size: 20px; color: var(--primary-blue); margin-right: 12px;"></i>
+            <div style="flex: 1;">
+              <div style="font-weight: 500;">转派任务</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">将当前任务转派给其他车辆</div>
+            </div>
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">转派任务</button>
+          </div>
+          
+          <div style="display: flex; align-items: center;">
+            <i class="fas fa-calendar-alt" style="font-size: 20px; color: var(--primary-blue); margin-right: 12px;"></i>
+            <div style="flex: 1;">
+              <div style="font-weight: 500;">重新安排配送计划</div>
+              <div style="font-size: 12px; color: var(--dark-gray);">修改配送时间或分批配送</div>
+            </div>
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">修改计划</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

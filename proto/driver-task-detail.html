@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 任务详情</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+      <div class="header-title">任务详情</div>
+      <button style="background: none; border: none; color: white; font-size: 20px;">
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+    </div>
+    
+    <div class="main-content">
+      <!-- 任务基本信息 -->
+      <div class="card" style="margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+          <div style="font-size: 18px; font-weight: 500;">货物配送 #T3421</div>
+          <span class="status-badge status-in-progress">进行中</span>
+        </div>
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background-color: var(--success-green); margin-right: 8px;"></div>
+              <div style="font-weight: 500;">北京市海淀区</div>
+            </div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-left: 18px;">装货点</div>
+          </div>
+          <div style="margin: 0 12px; color: var(--dark-gray);">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background-color: var(--error-red); margin-right: 8px;"></div>
+              <div style="font-weight: 500;">天津市西青区</div>
+            </div>
+            <div style="font-size: 12px; color: var(--dark-gray); margin-left: 18px;">卸货点</div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 12px;">
+          <div>
+            <div style="font-size: 12px; color: var(--dark-gray);">装货时间</div>
+            <div style="font-weight: 500;">2023-09-18 08:30</div>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--dark-gray);">卸货时间</div>
+            <div style="font-weight: 500;">2023-09-18 14:30</div>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--dark-gray);">货物类型</div>
+            <div style="font-weight: 500;">普通货物</div>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: var(--dark-gray);">重量</div>
+            <div style="font-weight: 500;">15吨</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="flex: 1;">
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 65%;"></div>
+            </div>
+          </div>
+          <div style="white-space: nowrap; font-size: 14px; color: var(--primary-blue);">65%</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; margin-top: 4px;">
+          <span>已行驶：78.5公里</span>
+          <span>剩余：43.2公里</span>
+        </div>
+      </div>
+      
+      <!-- 地图显示 -->
+      <div class="card">
+        <div class="card-title">任务路线</div>
+        <div class="map-container" style="height: 200px; background-image: url('https://i.ibb.co/F8FVsNM/route-map.jpg'); background-size: cover; background-position: center; border-radius: 8px;"></div>
+        <div style="display: flex; justify-content: space-between; padding: 12px 0;">
+          <button class="btn btn-secondary" style="display: flex; align-items: center; gap: 8px;">
+            <i class="fas fa-directions"></i> 导航
+          </button>
+          <button class="btn btn-primary" style="display: flex; align-items: center; gap: 8px;">
+            <i class="fas fa-share-alt"></i> 共享位置
+          </button>
+        </div>
+      </div>
+      
+      <!-- 标签页导航 -->
+      <div class="tabs">
+        <div class="tab active">任务信息</div>
+        <div class="tab">货物详情</div>
+        <div class="tab">联系人</div>
+      </div>
+      
+      <!-- 任务信息 -->
+      <div class="card">
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 500; margin-bottom: 8px;">任务详情</div>
+          <div style="color: var(--text-primary); line-height: 1.6; font-size: 14px;">
+            运输普通货物从北京至天津，需在指定时间内完成。货物需小心装卸，避免损坏。送达后请联系收货方确认，并在系统中完成签收流程。
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 500; margin-bottom: 8px;">装卸要求</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <div style="padding: 4px 12px; background-color: var(--light-blue); border-radius: 12px; font-size: 12px; color: var(--primary-blue);">需叉车</div>
+            <div style="padding: 4px 12px; background-color: var(--light-blue); border-radius: 12px; font-size: 12px; color: var(--primary-blue);">轻拿轻放</div>
+            <div style="padding: 4px 12px; background-color: var(--light-blue); border-radius: 12px; font-size: 12px; color: var(--primary-blue);">防雨防潮</div>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 500; margin-bottom: 8px;">任务进度</div>
+          <div class="timeline">
+            <div class="timeline-item completed">
+              <div class="timeline-time">08:15</div>
+              <div class="timeline-title">任务开始</div>
+              <div class="timeline-description">开始前往装货点</div>
+            </div>
+            <div class="timeline-item completed">
+              <div class="timeline-time">08:30</div>
+              <div class="timeline-title">到达装货点</div>
+              <div class="timeline-description">北京市海淀区</div>
+            </div>
+            <div class="timeline-item completed">
+              <div class="timeline-time">09:45</div>
+              <div class="timeline-title">装货完成</div>
+              <div class="timeline-description">开始前往卸货点</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">--:--</div>
+              <div class="timeline-title">到达卸货点</div>
+              <div class="timeline-description">天津市西青区</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">--:--</div>
+              <div class="timeline-title">卸货完成</div>
+              <div class="timeline-description">客户签收货物</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">--:--</div>
+              <div class="timeline-title">任务完成</div>
+              <div class="timeline-description">任务评价</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 操作按钮 -->
+      <div style="margin: 20px 0;">
+        <div class="card" style="padding: 16px;">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <button class="btn btn-secondary" style="display: flex; flex-direction: column; align-items: center; padding: 12px;">
+              <i class="fas fa-phone" style="font-size: 20px; margin-bottom: 8px;"></i>
+              <span style="font-size: 12px;">联系收货方</span>
+            </button>
+            <button class="btn btn-secondary" style="display: flex; flex-direction: column; align-items: center; padding: 12px;">
+              <i class="fas fa-camera" style="font-size: 20px; margin-bottom: 8px;"></i>
+              <span style="font-size: 12px;">拍照上传</span>
+            </button>
+            <button class="btn btn-secondary" style="display: flex; flex-direction: column; align-items: center; padding: 12px;">
+              <i class="fas fa-headset" style="font-size: 20px; margin-bottom: 8px;"></i>
+              <span style="font-size: 12px;">寻求帮助</span>
+            </button>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" style="width: 100%; margin-top: 16px; padding: 12px; font-size: 16px;">
+          更新任务状态
+        </button>
+      </div>
+    </div>
+    
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+      <a href="driver-dashboard.html" class="nav-item">
+        <i class="fas fa-home nav-icon"></i>
+        <span>首页</span>
+      </a>
+      <a href="driver-tasks.html" class="nav-item active">
+        <i class="fas fa-clipboard-list nav-icon"></i>
+        <span>任务</span>
+      </a>
+      <a href="driver-service.html" class="nav-item">
+        <i class="fas fa-headset nav-icon"></i>
+        <span>服务</span>
+      </a>
+      <a href="driver-finance.html" class="nav-item">
+        <i class="fas fa-wallet nav-icon"></i>
+        <span>钱包</span>
+      </a>
+      <a href="driver-profile.html" class="nav-item">
+        <i class="fas fa-user nav-icon"></i>
+        <span>我的</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html> 

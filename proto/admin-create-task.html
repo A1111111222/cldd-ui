@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>车队管理 - 新建任务</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <button class="back-button"><i class="fas fa-arrow-left"></i></button>
+      <div class="header-title">新建任务</div>
+      <div style="width: 24px;"></div>
+    </div>
+    
+    <div class="main-content">
+      <!-- 步骤指示器 -->
+      <div style="display: flex; align-items: center; margin-bottom: 24px; padding: 0 16px;">
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+          <div style="width: 24px; height: 24px; border-radius: 12px; background-color: var(--primary-blue); color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-bottom: 4px;">1</div>
+          <div style="font-size: 12px; color: var(--primary-blue); font-weight: 500;">基本信息</div>
+        </div>
+        <div style="flex: 1; height: 2px; background-color: var(--medium-gray);">
+          <div style="width: 50%; height: 100%; background-color: var(--primary-blue);"></div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+          <div style="width: 24px; height: 24px; border-radius: 12px; background-color: var(--medium-gray); color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-bottom: 4px;">2</div>
+          <div style="font-size: 12px; color: var(--dark-gray);">车辆分配</div>
+        </div>
+        <div style="flex: 1; height: 2px; background-color: var(--medium-gray);"></div>
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+          <div style="width: 24px; height: 24px; border-radius: 12px; background-color: var(--medium-gray); color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-bottom: 4px;">3</div>
+          <div style="font-size: 12px; color: var(--dark-gray);">确认提交</div>
+        </div>
+      </div>
+      
+      <!-- 任务表单 -->
+      <div class="card">
+        <div class="card-title">任务信息</div>
+        
+        <div class="input-group">
+          <label class="input-label">任务类型</label>
+          <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 12px; border: 2px solid var(--primary-blue); border-radius: 8px; background-color: var(--light-blue); cursor: pointer;">
+              <div style="text-align: center;">
+                <i class="fas fa-box" style="font-size: 24px; color: var(--primary-blue); margin-bottom: 8px;"></i>
+                <div style="font-weight: 500; color: var(--primary-blue);">货物配送</div>
+              </div>
+            </div>
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 12px; border: 2px solid var(--medium-gray); border-radius: 8px; cursor: pointer;">
+              <div style="text-align: center;">
+                <i class="fas fa-cog" style="font-size: 24px; color: var(--dark-gray); margin-bottom: 8px;"></i>
+                <div style="font-weight: 500; color: var(--dark-gray);">设备运输</div>
+              </div>
+            </div>
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 12px; border: 2px solid var(--medium-gray); border-radius: 8px; cursor: pointer;">
+              <div style="text-align: center;">
+                <i class="fas fa-shuttle-van" style="font-size: 24px; color: var(--dark-gray); margin-bottom: 8px;"></i>
+                <div style="font-weight: 500; color: var(--dark-gray);">其他</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="input-group">
+          <label for="taskName" class="input-label">任务名称</label>
+          <input type="text" id="taskName" class="input-field" placeholder="输入任务名称，如：北京-天津货物配送">
+        </div>
+        
+        <div class="input-group">
+          <label for="taskDesc" class="input-label">任务描述（可选）</label>
+          <textarea id="taskDesc" class="input-field" placeholder="输入任务描述或备注信息" style="height: 80px; resize: none;"></textarea>
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">配送日期</label>
+          <div style="display: flex; gap: 12px;">
+            <div style="flex: 1;">
+              <label for="startDate" style="font-size: 12px; color: var(--dark-gray); margin-bottom: 4px; display: block;">开始日期</label>
+              <input type="date" id="startDate" class="input-field" value="2023-09-18">
+            </div>
+            <div style="flex: 1;">
+              <label for="endDate" style="font-size: 12px; color: var(--dark-gray); margin-bottom: 4px; display: block;">结束日期</label>
+              <input type="date" id="endDate" class="input-field" value="2023-09-18">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 路线信息 -->
+      <div class="card">
+        <div class="card-title">路线信息</div>
+        
+        <div class="input-group">
+          <label class="input-label">装货点</label>
+          <div class="input-field" style="display: flex; align-items: center;">
+            <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--dark-gray);"></i>
+            <input type="text" placeholder="选择装货地点" style="border: none; flex: 1; outline: none; font-size: 16px;">
+            <button style="background: none; border: none; color: var(--primary-blue);"><i class="fas fa-map"></i></button>
+          </div>
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">卸货点</label>
+          <div class="input-field" style="display: flex; align-items: center;">
+            <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--dark-gray);"></i>
+            <input type="text" placeholder="选择卸货地点" style="border: none; flex: 1; outline: none; font-size: 16px;">
+            <button style="background: none; border: none; color: var(--primary-blue);"><i class="fas fa-map"></i></button>
+          </div>
+        </div>
+        
+        <div class="map-container" style="height: 160px; background-image: url('https://i.ibb.co/F8FVsNM/route-map.jpg'); background-size: cover; background-position: center;"></div>
+      </div>
+      
+      <!-- 货物信息 -->
+      <div class="card">
+        <div class="card-title">货物信息</div>
+        
+        <div class="input-group">
+          <label for="cargoType" class="input-label">货物类型</label>
+          <select id="cargoType" class="input-field">
+            <option value="">选择货物类型</option>
+            <option value="general">普通货物</option>
+            <option value="fragile">易碎物品</option>
+            <option value="dangerous">危险品</option>
+            <option value="refrigerated">冷藏品</option>
+          </select>
+        </div>
+        
+        <div style="display: flex; gap: 12px;">
+          <div class="input-group" style="flex: 1;">
+            <label for="weight" class="input-label">总重量（吨）</label>
+            <input type="number" id="weight" class="input-field" placeholder="输入重量">
+          </div>
+          <div class="input-group" style="flex: 1;">
+            <label for="volume" class="input-label">总体积（立方米）</label>
+            <input type="number" id="volume" class="input-field" placeholder="输入体积">
+          </div>
+        </div>
+        
+        <div class="input-group">
+          <label for="vehicleCount" class="input-label">所需车辆数量</label>
+          <input type="number" id="vehicleCount" class="input-field" value="3">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">车辆要求</label>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+            <div style="padding: 6px 12px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 16px; font-size: 12px; display: flex; align-items: center;">
+              <span>重型卡车</span>
+              <i class="fas fa-times-circle" style="margin-left: 4px;"></i>
+            </div>
+            <div style="padding: 6px 12px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 16px; font-size: 12px; display: flex; align-items: center;">
+              <span>载重 > 20吨</span>
+              <i class="fas fa-times-circle" style="margin-left: 4px;"></i>
+            </div>
+            <div style="padding: 6px 12px; border: 1px dashed var(--medium-gray); color: var(--dark-gray); border-radius: 16px; font-size: 12px;">
+              + 添加要求
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 联系人信息 -->
+      <div class="card">
+        <div class="card-title">联系人信息</div>
+        
+        <div class="input-group">
+          <label for="contactName" class="input-label">发货方联系人</label>
+          <input type="text" id="contactName" class="input-field" placeholder="输入联系人姓名">
+        </div>
+        
+        <div class="input-group">
+          <label for="contactPhone" class="input-label">联系电话</label>
+          <input type="tel" id="contactPhone" class="input-field" placeholder="输入联系电话">
+        </div>
+        
+        <div class="input-group">
+          <label for="receiverName" class="input-label">收货方联系人</label>
+          <input type="text" id="receiverName" class="input-field" placeholder="输入联系人姓名">
+        </div>
+        
+        <div class="input-group">
+          <label for="receiverPhone" class="input-label">联系电话</label>
+          <input type="tel" id="receiverPhone" class="input-field" placeholder="输入联系电话">
+        </div>
+      </div>
+      
+      <!-- 底部按钮 -->
+      <div style="display: flex; gap: 12px; margin: 24px 0;">
+        <button class="btn btn-secondary" style="flex: 1;">保存草稿</button>
+        <button class="btn btn-primary" style="flex: 1;">下一步</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 
