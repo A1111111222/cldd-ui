@@ -1,168 +1,844 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>车队管理APP原型</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
-    }
-    
-    body {
-      background-color: #f5f5f5;
-      padding: 20px;
-    }
-    
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #1a73e8;
-    }
-    
-    .prototype-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    
-    .prototype-item {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    
-    .prototype-title {
-      background-color: #1a73e8;
-      color: white;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: 500;
-    }
-    
-    .prototype-frame {
-      width: 100%;
-      height: 600px;
-      border: none;
-    }
-    
-    .section-title {
-      margin: 30px 0 20px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #1a73e8;
-      color: #1a73e8;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>车辆调度平台与办公软件图标展示</title>
+    <!-- 引入FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .category {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .icons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .icon-item:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+        }
+        .icon-item i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .icon-name {
+            font-size: 12px;
+            text-align: center;
+            color: #666;
+        }
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .copy-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
-  <h1>车队管理APP原型</h1>
-  
-  <!-- 通用界面 -->
-  <h2 class="section-title">通用界面</h2>
-  <div class="prototype-grid">
-    <div class="prototype-item">
-      <div class="prototype-title">登录界面</div>
-      <iframe src="login.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">注册界面</div>
-      <iframe src="register.html" class="prototype-frame"></iframe>
-    </div>
-  </div>
-  
-  <!-- 管理员界面 -->
-  <h2 class="section-title">管理员界面</h2>
-  <div class="prototype-grid">
-    <div class="prototype-item">
-      <div class="prototype-title">管理员主界面</div>
-      <iframe src="admin-dashboard.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">车辆管理</div>
-      <iframe src="admin-vehicles.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">车辆详情</div>
-      <iframe src="admin-vehicle-detail.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">任务调度</div>
-      <iframe src="admin-dispatch.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">新建任务</div>
-      <iframe src="admin-create-task.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">服务支持中心</div>
-      <iframe src="admin-service.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">服务请求详情</div>
-      <iframe src="admin-service-detail.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">金融服务管理</div>
-      <iframe src="admin-finance.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">保险服务管理</div>
-      <iframe src="admin-insurance.html" class="prototype-frame"></iframe>
-    </div>
-  </div>
-  
-  <!-- 司机界面 -->
-  <h2 class="section-title">司机界面</h2>
-  <div class="prototype-grid">
-    <div class="prototype-item">
-      <div class="prototype-title">司机主界面</div>
-      <iframe src="driver-dashboard.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">司机任务列表</div>
-      <iframe src="driver-tasks.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">任务详情</div>
-      <iframe src="driver-task-detail.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">在途服务</div>
-      <iframe src="driver-service.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">提交服务请求</div>
-      <iframe src="driver-service-request.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">金融服务</div>
-      <iframe src="driver-finance.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">保险服务</div>
-      <iframe src="driver-insurance.html" class="prototype-frame"></iframe>
-    </div>
-    <div class="prototype-item">
-      <div class="prototype-title">个人中心</div>
-      <iframe src="driver-profile.html" class="prototype-frame"></iframe>
-    </div>
-  </div>
+    <h1>车辆调度平台与办公软件图标库</h1>
+    <input type="text" class="search-box" placeholder="搜索图标..." id="searchInput">
+    <div id="copyMessage" class="copy-message">图标类名已复制到剪贴板</div>
 
-  <script>
-    // 等待所有iframe加载完成
-    window.addEventListener('load', function() {
-      // 调整iframe高度
-      const iframes = document.querySelectorAll('.prototype-frame');
-      iframes.forEach(iframe => {
-        iframe.style.height = '600px';
-      });
-    });
-  </script>
+    <!-- 车辆调度相关图标 -->
+    <section class="category">
+        <h2>车辆调度相关图标</h2>
+        <div class="icons-container">
+            <div class="icon-item" data-icon="fa-car">
+                <i class="fas fa-car"></i>
+                <span class="icon-name">fa-car</span>
+            </div>
+            <div class="icon-item" data-icon="fa-truck">
+                <i class="fas fa-truck"></i>
+                <span class="icon-name">fa-truck</span>
+            </div>
+            <div class="icon-item" data-icon="fa-bus">
+                <i class="fas fa-bus"></i>
+                <span class="icon-name">fa-bus</span>
+            </div>
+            <div class="icon-item" data-icon="fa-taxi">
+                <i class="fas fa-taxi"></i>
+                <span class="icon-name">fa-taxi</span>
+            </div>
+            <div class="icon-item" data-icon="fa-truck-moving">
+                <i class="fas fa-truck-moving"></i>
+                <span class="icon-name">fa-truck-moving</span>
+            </div>
+            <div class="icon-item" data-icon="fa-ambulance">
+                <i class="fas fa-ambulance"></i>
+                <span class="icon-name">fa-ambulance</span>
+            </div>
+            <div class="icon-item" data-icon="fa-car-side">
+                <i class="fas fa-car-side"></i>
+                <span class="icon-name">fa-car-side</span>
+            </div>
+            <div class="icon-item" data-icon="fa-shuttle-van">
+                <i class="fas fa-shuttle-van"></i>
+                <span class="icon-name">fa-shuttle-van</span>
+            </div>
+            <div class="icon-item" data-icon="fa-truck-loading">
+                <i class="fas fa-truck-loading"></i>
+                <span class="icon-name">fa-truck-loading</span>
+            </div>
+            <div class="icon-item" data-icon="fa-truck-pickup">
+                <i class="fas fa-truck-pickup"></i>
+                <span class="icon-name">fa-truck-pickup</span>
+            </div>
+            <div class="icon-item" data-icon="fa-route">
+                <i class="fas fa-route"></i>
+                <span class="icon-name">fa-route</span>
+            </div>
+            <div class="icon-item" data-icon="fa-map-marked-alt">
+                <i class="fas fa-map-marked-alt"></i>
+                <span class="icon-name">fa-map-marked-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-gas-pump">
+                <i class="fas fa-gas-pump"></i>
+                <span class="icon-name">fa-gas-pump</span>
+            </div>
+            <div class="icon-item" data-icon="fa-oil-can">
+                <i class="fas fa-oil-can"></i>
+                <span class="icon-name">fa-oil-can</span>
+            </div>
+            <div class="icon-item" data-icon="fa-tachometer-alt">
+                <i class="fas fa-tachometer-alt"></i>
+                <span class="icon-name">fa-tachometer-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-road">
+                <i class="fas fa-road"></i>
+                <span class="icon-name">fa-road</span>
+            </div>
+            <div class="icon-item" data-icon="fa-traffic-light">
+                <i class="fas fa-traffic-light"></i>
+                <span class="icon-name">fa-traffic-light</span>
+            </div>
+            <div class="icon-item" data-icon="fa-calendar-alt">
+                <i class="fas fa-calendar-alt"></i>
+                <span class="icon-name">fa-calendar-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-clock">
+                <i class="fas fa-clock"></i>
+                <span class="icon-name">fa-clock</span>
+            </div>
+            <div class="icon-item" data-icon="fa-location-arrow">
+                <i class="fas fa-location-arrow"></i>
+                <span class="icon-name">fa-location-arrow</span>
+            </div>
+            <!-- 驾驶、司机相关图标 -->
+            <div class="icon-item" data-icon="fa-id-card">
+                <i class="fas fa-id-card"></i>
+                <span class="icon-name">fa-id-card</span>
+            </div>
+            <div class="icon-item" data-icon="fa-user-tie">
+                <i class="fas fa-user-tie"></i>
+                <span class="icon-name">fa-user-tie</span>
+            </div>
+            <div class="icon-item" data-icon="fa-headset">
+                <i class="fas fa-headset"></i>
+                <span class="icon-name">fa-headset</span>
+            </div>
+            <div class="icon-item" data-icon="fa-user-shield">
+                <i class="fas fa-user-shield"></i>
+                <span class="icon-name">fa-user-shield</span>
+            </div>
+            <div class="icon-item" data-icon="fa-user-clock">
+                <i class="fas fa-user-clock"></i>
+                <span class="icon-name">fa-user-clock</span>
+            </div>
+            <!-- 道路、交通相关图标 -->
+            <div class="icon-item" data-icon="fa-map-signs">
+                <i class="fas fa-map-signs"></i>
+                <span class="icon-name">fa-map-signs</span>
+            </div>
+            <div class="icon-item" data-icon="fa-map-pin">
+                <i class="fas fa-map-pin"></i>
+                <span class="icon-name">fa-map-pin</span>
+            </div>
+            <div class="icon-item" data-icon="fa-directions">
+                <i class="fas fa-directions"></i>
+                <span class="icon-name">fa-directions</span>
+            </div>
+            <div class="icon-item" data-icon="fa-crosshairs">
+                <i class="fas fa-crosshairs"></i>
+                <span class="icon-name">fa-crosshairs</span>
+            </div>
+            <div class="icon-item" data-icon="fa-stopwatch">
+                <i class="fas fa-stopwatch"></i>
+                <span class="icon-name">fa-stopwatch</span>
+            </div>
+            <div class="icon-item" data-icon="fa-compass">
+                <i class="fas fa-compass"></i>
+                <span class="icon-name">fa-compass</span>
+            </div>
+            <div class="icon-item" data-icon="fa-phone">
+                <i class="fas fa-phone"></i>
+                <span class="icon-name">fa-phone</span>
+            </div>
+            <div class="icon-item" data-icon="fa-mobile-alt">
+                <i class="fas fa-mobile-alt"></i>
+                <span class="icon-name">fa-mobile-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-tools">
+                <i class="fas fa-tools"></i>
+                <span class="icon-name">fa-tools</span>
+            </div>
+            <div class="icon-item" data-icon="fa-hammer">
+                <i class="fas fa-hammer"></i>
+                <span class="icon-name">fa-hammer</span>
+            </div>
+            <div class="icon-item" data-icon="fa-screwdriver">
+                <i class="fas fa-screwdriver"></i>
+                <span class="icon-name">fa-screwdriver</span>
+            </div>
+            <div class="icon-item" data-icon="fa-wrench">
+                <i class="fas fa-wrench"></i>
+                <span class="icon-name">fa-wrench</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 办公软件相关图标 -->
+    <section class="category">
+        <h2>办公软件相关图标</h2>
+        <div class="icons-container">
+            <div class="icon-item" data-icon="fa-file">
+                <i class="fas fa-file"></i>
+                <span class="icon-name">fa-file</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-word">
+                <i class="fas fa-file-word"></i>
+                <span class="icon-name">fa-file-word</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-excel">
+                <i class="fas fa-file-excel"></i>
+                <span class="icon-name">fa-file-excel</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-powerpoint">
+                <i class="fas fa-file-powerpoint"></i>
+                <span class="icon-name">fa-file-powerpoint</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-pdf">
+                <i class="fas fa-file-pdf"></i>
+                <span class="icon-name">fa-file-pdf</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-alt">
+                <i class="fas fa-file-alt"></i>
+                <span class="icon-name">fa-file-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-folder">
+                <i class="fas fa-folder"></i>
+                <span class="icon-name">fa-folder</span>
+            </div>
+            <div class="icon-item" data-icon="fa-folder-open">
+                <i class="fas fa-folder-open"></i>
+                <span class="icon-name">fa-folder-open</span>
+            </div>
+            <div class="icon-item" data-icon="fa-save">
+                <i class="fas fa-save"></i>
+                <span class="icon-name">fa-save</span>
+            </div>
+            <div class="icon-item" data-icon="fa-print">
+                <i class="fas fa-print"></i>
+                <span class="icon-name">fa-print</span>
+            </div>
+            <div class="icon-item" data-icon="fa-paperclip">
+                <i class="fas fa-paperclip"></i>
+                <span class="icon-name">fa-paperclip</span>
+            </div>
+            <div class="icon-item" data-icon="fa-envelope">
+                <i class="fas fa-envelope"></i>
+                <span class="icon-name">fa-envelope</span>
+            </div>
+            <div class="icon-item" data-icon="fa-inbox">
+                <i class="fas fa-inbox"></i>
+                <span class="icon-name">fa-inbox</span>
+            </div>
+            <div class="icon-item" data-icon="fa-chart-bar">
+                <i class="fas fa-chart-bar"></i>
+                <span class="icon-name">fa-chart-bar</span>
+            </div>
+            <div class="icon-item" data-icon="fa-chart-line">
+                <i class="fas fa-chart-line"></i>
+                <span class="icon-name">fa-chart-line</span>
+            </div>
+            <div class="icon-item" data-icon="fa-chart-pie">
+                <i class="fas fa-chart-pie"></i>
+                <span class="icon-name">fa-chart-pie</span>
+            </div>
+            <div class="icon-item" data-icon="fa-calculator">
+                <i class="fas fa-calculator"></i>
+                <span class="icon-name">fa-calculator</span>
+            </div>
+            <div class="icon-item" data-icon="fa-clipboard">
+                <i class="fas fa-clipboard"></i>
+                <span class="icon-name">fa-clipboard</span>
+            </div>
+            <div class="icon-item" data-icon="fa-tasks">
+                <i class="fas fa-tasks"></i>
+                <span class="icon-name">fa-tasks</span>
+            </div>
+            <div class="icon-item" data-icon="fa-sticky-note">
+                <i class="fas fa-sticky-note"></i>
+                <span class="icon-name">fa-sticky-note</span>
+            </div>
+            <div class="icon-item" data-icon="fa-table">
+                <i class="fas fa-table"></i>
+                <span class="icon-name">fa-table</span>
+            </div>
+            <div class="icon-item" data-icon="fa-edit">
+                <i class="fas fa-edit"></i>
+                <span class="icon-name">fa-edit</span>
+            </div>
+            <div class="icon-item" data-icon="fa-pen">
+                <i class="fas fa-pen"></i>
+                <span class="icon-name">fa-pen</span>
+            </div>
+            <div class="icon-item" data-icon="fa-search">
+                <i class="fas fa-search"></i>
+                <span class="icon-name">fa-search</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 系统功能相关图标 -->
+    <section class="category">
+        <h2>系统功能相关图标</h2>
+        <div class="icons-container">
+            <div class="icon-item" data-icon="fa-home">
+                <i class="fas fa-home"></i>
+                <span class="icon-name">fa-home</span>
+            </div>
+            <div class="icon-item" data-icon="fa-user">
+                <i class="fas fa-user"></i>
+                <span class="icon-name">fa-user</span>
+            </div>
+            <div class="icon-item" data-icon="fa-users">
+                <i class="fas fa-users"></i>
+                <span class="icon-name">fa-users</span>
+            </div>
+            <div class="icon-item" data-icon="fa-cog">
+                <i class="fas fa-cog"></i>
+                <span class="icon-name">fa-cog</span>
+            </div>
+            <div class="icon-item" data-icon="fa-cogs">
+                <i class="fas fa-cogs"></i>
+                <span class="icon-name">fa-cogs</span>
+            </div>
+            <div class="icon-item" data-icon="fa-wrench">
+                <i class="fas fa-wrench"></i>
+                <span class="icon-name">fa-wrench</span>
+            </div>
+            <div class="icon-item" data-icon="fa-sliders-h">
+                <i class="fas fa-sliders-h"></i>
+                <span class="icon-name">fa-sliders-h</span>
+            </div>
+            <div class="icon-item" data-icon="fa-sign-out-alt">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="icon-name">fa-sign-out-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-sign-in-alt">
+                <i class="fas fa-sign-in-alt"></i>
+                <span class="icon-name">fa-sign-in-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-lock">
+                <i class="fas fa-lock"></i>
+                <span class="icon-name">fa-lock</span>
+            </div>
+            <div class="icon-item" data-icon="fa-unlock">
+                <i class="fas fa-unlock"></i>
+                <span class="icon-name">fa-unlock</span>
+            </div>
+            <div class="icon-item" data-icon="fa-bell">
+                <i class="fas fa-bell"></i>
+                <span class="icon-name">fa-bell</span>
+            </div>
+            <div class="icon-item" data-icon="fa-database">
+                <i class="fas fa-database"></i>
+                <span class="icon-name">fa-database</span>
+            </div>
+            <div class="icon-item" data-icon="fa-server">
+                <i class="fas fa-server"></i>
+                <span class="icon-name">fa-server</span>
+            </div>
+            <div class="icon-item" data-icon="fa-wifi">
+                <i class="fas fa-wifi"></i>
+                <span class="icon-name">fa-wifi</span>
+            </div>
+            <div class="icon-item" data-icon="fa-download">
+                <i class="fas fa-download"></i>
+                <span class="icon-name">fa-download</span>
+            </div>
+            <div class="icon-item" data-icon="fa-upload">
+                <i class="fas fa-upload"></i>
+                <span class="icon-name">fa-upload</span>
+            </div>
+            <div class="icon-item" data-icon="fa-sync">
+                <i class="fas fa-sync"></i>
+                <span class="icon-name">fa-sync</span>
+            </div>
+            <div class="icon-item" data-icon="fa-trash">
+                <i class="fas fa-trash"></i>
+                <span class="icon-name">fa-trash</span>
+            </div>
+            <div class="icon-item" data-icon="fa-plus">
+                <i class="fas fa-plus"></i>
+                <span class="icon-name">fa-plus</span>
+            </div>
+            <div class="icon-item" data-icon="fa-minus">
+                <i class="fas fa-minus"></i>
+                <span class="icon-name">fa-minus</span>
+            </div>
+            <div class="icon-item" data-icon="fa-check">
+                <i class="fas fa-check"></i>
+                <span class="icon-name">fa-check</span>
+            </div>
+            <div class="icon-item" data-icon="fa-times">
+                <i class="fas fa-times"></i>
+                <span class="icon-name">fa-times</span>
+            </div>
+            <div class="icon-item" data-icon="fa-info-circle">
+                <i class="fas fa-info-circle"></i>
+                <span class="icon-name">fa-info-circle</span>
+            </div>
+            <div class="icon-item" data-icon="fa-question-circle">
+                <i class="fas fa-question-circle"></i>
+                <span class="icon-name">fa-question-circle</span>
+            </div>
+            <div class="icon-item" data-icon="fa-exclamation-circle">
+                <i class="fas fa-exclamation-circle"></i>
+                <span class="icon-name">fa-exclamation-circle</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 道路故障、加油与维修相关图标 -->
+    <section class="category">
+        <h2>道路故障、加油与维修相关图标</h2>
+        <div class="icons-container">
+            <div class="icon-item" data-icon="fa-car-crash">
+                <i class="fas fa-car-crash"></i>
+                <span class="icon-name">fa-car-crash</span>
+            </div>
+            <div class="icon-item" data-icon="fa-car-battery">
+                <i class="fas fa-car-battery"></i>
+                <span class="icon-name">fa-car-battery</span>
+            </div>
+            <div class="icon-item" data-icon="fa-bolt">
+                <i class="fas fa-bolt"></i>
+                <span class="icon-name">fa-bolt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-oil-can">
+                <i class="fas fa-oil-can"></i>
+                <span class="icon-name">fa-oil-can</span>
+            </div>
+            <div class="icon-item" data-icon="fa-toolbox">
+                <i class="fas fa-toolbox"></i>
+                <span class="icon-name">fa-toolbox</span>
+            </div>
+            <div class="icon-item" data-icon="fa-tire">
+                <i class="fas fa-tire"></i>
+                <span class="icon-name">fa-tire</span>
+            </div>
+            <div class="icon-item" data-icon="fa-cogs">
+                <i class="fas fa-cogs"></i>
+                <span class="icon-name">fa-cogs</span>
+            </div>
+            <div class="icon-item" data-icon="fa-wrench">
+                <i class="fas fa-wrench"></i>
+                <span class="icon-name">fa-wrench</span>
+            </div>
+            <div class="icon-item" data-icon="fa-snowplow">
+                <i class="fas fa-snowplow"></i>
+                <span class="icon-name">fa-snowplow</span>
+            </div>
+            <div class="icon-item" data-icon="fa-truck-monster">
+                <i class="fas fa-truck-monster"></i>
+                <span class="icon-name">fa-truck-monster</span>
+            </div>
+            <div class="icon-item" data-icon="fa-spray-can">
+                <i class="fas fa-spray-can"></i>
+                <span class="icon-name">fa-spray-can</span>
+            </div>
+            <div class="icon-item" data-icon="fa-thermometer-half">
+                <i class="fas fa-thermometer-half"></i>
+                <span class="icon-name">fa-thermometer-half</span>
+            </div>
+            <div class="icon-item" data-icon="fa-fire">
+                <i class="fas fa-fire"></i>
+                <span class="icon-name">fa-fire</span>
+            </div>
+            <div class="icon-item" data-icon="fa-plug">
+                <i class="fas fa-plug"></i>
+                <span class="icon-name">fa-plug</span>
+            </div>
+            <div class="icon-item" data-icon="fa-hands-helping">
+                <i class="fas fa-hands-helping"></i>
+                <span class="icon-name">fa-hands-helping</span>
+            </div>
+            <div class="icon-item" data-icon="fa-ban">
+                <i class="fas fa-ban"></i>
+                <span class="icon-name">fa-ban</span>
+            </div>
+            <div class="icon-item" data-icon="fa-exclamation-triangle">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span class="icon-name">fa-exclamation-triangle</span>
+            </div>
+            <div class="icon-item" data-icon="fa-engine-warning">
+                <i class="fas fa-engine-warning"></i>
+                <span class="icon-name">fa-engine-warning</span>
+            </div>
+            <div class="icon-item" data-icon="fa-tow-truck">
+                <i class="fas fa-truck-pickup"></i>
+                <span class="icon-name">fa-truck-pickup</span>
+            </div>
+            <div class="icon-item" data-icon="fa-searchengin">
+                <i class="fab fa-searchengin"></i>
+                <span class="icon-name">fa-searchengin</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 调度和监控相关图标 -->
+    <section class="category">
+        <h2>调度和监控相关图标</h2>
+        <div class="icons-container">
+            <div class="icon-item" data-icon="fa-desktop">
+                <i class="fas fa-desktop"></i>
+                <span class="icon-name">fa-desktop</span>
+            </div>
+            <div class="icon-item" data-icon="fa-tv">
+                <i class="fas fa-tv"></i>
+                <span class="icon-name">fa-tv</span>
+            </div>
+            <div class="icon-item" data-icon="fa-satellite">
+                <i class="fas fa-satellite"></i>
+                <span class="icon-name">fa-satellite</span>
+            </div>
+            <div class="icon-item" data-icon="fa-satellite-dish">
+                <i class="fas fa-satellite-dish"></i>
+                <span class="icon-name">fa-satellite-dish</span>
+            </div>
+            <div class="icon-item" data-icon="fa-broadcast-tower">
+                <i class="fas fa-broadcast-tower"></i>
+                <span class="icon-name">fa-broadcast-tower</span>
+            </div>
+            <div class="icon-item" data-icon="fa-video">
+                <i class="fas fa-video"></i>
+                <span class="icon-name">fa-video</span>
+            </div>
+            <div class="icon-item" data-icon="fa-camera">
+                <i class="fas fa-camera"></i>
+                <span class="icon-name">fa-camera</span>
+            </div>
+            <div class="icon-item" data-icon="fa-bullhorn">
+                <i class="fas fa-bullhorn"></i>
+                <span class="icon-name">fa-bullhorn</span>
+            </div>
+            <div class="icon-item" data-icon="fa-microphone">
+                <i class="fas fa-microphone"></i>
+                <span class="icon-name">fa-microphone</span>
+            </div>
+            <div class="icon-item" data-icon="fa-percent">
+                <i class="fas fa-percent"></i>
+                <span class="icon-name">fa-percent</span>
+            </div>
+            <div class="icon-item" data-icon="fa-battery-full">
+                <i class="fas fa-battery-full"></i>
+                <span class="icon-name">fa-battery-full</span>
+            </div>
+            <div class="icon-item" data-icon="fa-battery-half">
+                <i class="fas fa-battery-half"></i>
+                <span class="icon-name">fa-battery-half</span>
+            </div>
+            <div class="icon-item" data-icon="fa-battery-quarter">
+                <i class="fas fa-battery-quarter"></i>
+                <span class="icon-name">fa-battery-quarter</span>
+            </div>
+            <div class="icon-item" data-icon="fa-comment">
+                <i class="fas fa-comment"></i>
+                <span class="icon-name">fa-comment</span>
+            </div>
+            <div class="icon-item" data-icon="fa-comments">
+                <i class="fas fa-comments"></i>
+                <span class="icon-name">fa-comments</span>
+            </div>
+            <div class="icon-item" data-icon="fa-headphones">
+                <i class="fas fa-headphones"></i>
+                <span class="icon-name">fa-headphones</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安全与合规相关图标 -->
+    <section class="category">
+        <h2>安全与合规相关图标</h2>
+        <div class="icons-container">
+            <div class="icon-item" data-icon="fa-shield-alt">
+                <i class="fas fa-shield-alt"></i>
+                <span class="icon-name">fa-shield-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-hard-hat">
+                <i class="fas fa-hard-hat"></i>
+                <span class="icon-name">fa-hard-hat</span>
+            </div>
+            <div class="icon-item" data-icon="fa-clipboard-check">
+                <i class="fas fa-clipboard-check"></i>
+                <span class="icon-name">fa-clipboard-check</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-contract">
+                <i class="fas fa-file-contract"></i>
+                <span class="icon-name">fa-file-contract</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-signature">
+                <i class="fas fa-file-signature"></i>
+                <span class="icon-name">fa-file-signature</span>
+            </div>
+            <div class="icon-item" data-icon="fa-certificate">
+                <i class="fas fa-certificate"></i>
+                <span class="icon-name">fa-certificate</span>
+            </div>
+            <div class="icon-item" data-icon="fa-award">
+                <i class="fas fa-award"></i>
+                <span class="icon-name">fa-award</span>
+            </div>
+            <div class="icon-item" data-icon="fa-medkit">
+                <i class="fas fa-medkit"></i>
+                <span class="icon-name">fa-medkit</span>
+            </div>
+            <div class="icon-item" data-icon="fa-first-aid">
+                <i class="fas fa-first-aid"></i>
+                <span class="icon-name">fa-first-aid</span>
+            </div>
+            <div class="icon-item" data-icon="fa-heartbeat">
+                <i class="fas fa-heartbeat"></i>
+                <span class="icon-name">fa-heartbeat</span>
+            </div>
+            <div class="icon-item" data-icon="fa-user-injured">
+                <i class="fas fa-user-injured"></i>
+                <span class="icon-name">fa-user-injured</span>
+            </div>
+            <div class="icon-item" data-icon="fa-users-cog">
+                <i class="fas fa-users-cog"></i>
+                <span class="icon-name">fa-users-cog</span>
+            </div>
+            <div class="icon-item" data-icon="fa-fire-extinguisher">
+                <i class="fas fa-fire-extinguisher"></i>
+                <span class="icon-name">fa-fire-extinguisher</span>
+            </div>
+            <div class="icon-item" data-icon="fa-eye">
+                <i class="fas fa-eye"></i>
+                <span class="icon-name">fa-eye</span>
+            </div>
+            <div class="icon-item" data-icon="fa-glasses">
+                <i class="fas fa-glasses"></i>
+                <span class="icon-name">fa-glasses</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 财务、报表、审核与流程相关图标 -->
+    <section class="category">
+        <h2>财务、报表、审核与流程相关图标</h2>
+        <div class="icons-container">
+            <div class="icon-item" data-icon="fa-money-bill-alt">
+                <i class="fas fa-money-bill-alt"></i>
+                <span class="icon-name">fa-money-bill-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-money-bill-wave">
+                <i class="fas fa-money-bill-wave"></i>
+                <span class="icon-name">fa-money-bill-wave</span>
+            </div>
+            <div class="icon-item" data-icon="fa-coins">
+                <i class="fas fa-coins"></i>
+                <span class="icon-name">fa-coins</span>
+            </div>
+            <div class="icon-item" data-icon="fa-credit-card">
+                <i class="fas fa-credit-card"></i>
+                <span class="icon-name">fa-credit-card</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-invoice">
+                <i class="fas fa-file-invoice"></i>
+                <span class="icon-name">fa-file-invoice</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-invoice-dollar">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span class="icon-name">fa-file-invoice-dollar</span>
+            </div>
+            <div class="icon-item" data-icon="fa-receipt">
+                <i class="fas fa-receipt"></i>
+                <span class="icon-name">fa-receipt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-percentage">
+                <i class="fas fa-percentage"></i>
+                <span class="icon-name">fa-percentage</span>
+            </div>
+            <div class="icon-item" data-icon="fa-dollar-sign">
+                <i class="fas fa-dollar-sign"></i>
+                <span class="icon-name">fa-dollar-sign</span>
+            </div>
+            <div class="icon-item" data-icon="fa-wallet">
+                <i class="fas fa-wallet"></i>
+                <span class="icon-name">fa-wallet</span>
+            </div>
+            <div class="icon-item" data-icon="fa-piggy-bank">
+                <i class="fas fa-piggy-bank"></i>
+                <span class="icon-name">fa-piggy-bank</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-signature">
+                <i class="fas fa-file-signature"></i>
+                <span class="icon-name">fa-file-signature</span>
+            </div>
+            <div class="icon-item" data-icon="fa-stamp">
+                <i class="fas fa-stamp"></i>
+                <span class="icon-name">fa-stamp</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-alt">
+                <i class="fas fa-file-alt"></i>
+                <span class="icon-name">fa-file-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-clipboard-list">
+                <i class="fas fa-clipboard-list"></i>
+                <span class="icon-name">fa-clipboard-list</span>
+            </div>
+            <div class="icon-item" data-icon="fa-clipboard-check">
+                <i class="fas fa-clipboard-check"></i>
+                <span class="icon-name">fa-clipboard-check</span>
+            </div>
+            <div class="icon-item" data-icon="fa-list-alt">
+                <i class="fas fa-list-alt"></i>
+                <span class="icon-name">fa-list-alt</span>
+            </div>
+            <div class="icon-item" data-icon="fa-list-ol">
+                <i class="fas fa-list-ol"></i>
+                <span class="icon-name">fa-list-ol</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-export">
+                <i class="fas fa-file-export"></i>
+                <span class="icon-name">fa-file-export</span>
+            </div>
+            <div class="icon-item" data-icon="fa-file-import">
+                <i class="fas fa-file-import"></i>
+                <span class="icon-name">fa-file-import</span>
+            </div>
+            <div class="icon-item" data-icon="fa-project-diagram">
+                <i class="fas fa-project-diagram"></i>
+                <span class="icon-name">fa-project-diagram</span>
+            </div>
+            <div class="icon-item" data-icon="fa-sitemap">
+                <i class="fas fa-sitemap"></i>
+                <span class="icon-name">fa-sitemap</span>
+            </div>
+            <div class="icon-item" data-icon="fa-chart-pie">
+                <i class="fas fa-chart-pie"></i>
+                <span class="icon-name">fa-chart-pie</span>
+            </div>
+            <div class="icon-item" data-icon="fa-chart-line">
+                <i class="fas fa-chart-line"></i>
+                <span class="icon-name">fa-chart-line</span>
+            </div>
+            <div class="icon-item" data-icon="fa-chart-bar">
+                <i class="fas fa-chart-bar"></i>
+                <span class="icon-name">fa-chart-bar</span>
+            </div>
+            <div class="icon-item" data-icon="fa-chart-area">
+                <i class="fas fa-chart-area"></i>
+                <span class="icon-name">fa-chart-area</span>
+            </div>
+            <div class="icon-item" data-icon="fa-balance-scale">
+                <i class="fas fa-balance-scale"></i>
+                <span class="icon-name">fa-balance-scale</span>
+            </div>
+            <div class="icon-item" data-icon="fa-gavel">
+                <i class="fas fa-gavel"></i>
+                <span class="icon-name">fa-gavel</span>
+            </div>
+            <div class="icon-item" data-icon="fa-tasks">
+                <i class="fas fa-tasks"></i>
+                <span class="icon-name">fa-tasks</span>
+            </div>
+            <div class="icon-item" data-icon="fa-puzzle-piece">
+                <i class="fas fa-puzzle-piece"></i>
+                <span class="icon-name">fa-puzzle-piece</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 搜索功能
+            const searchInput = document.getElementById('searchInput');
+            const iconItems = document.querySelectorAll('.icon-item');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                iconItems.forEach(item => {
+                    const iconName = item.getAttribute('data-icon').toLowerCase();
+                    if (iconName.includes(searchTerm)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+
+            // 点击复制功能
+            iconItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const iconClass = this.getAttribute('data-icon');
+                    navigator.clipboard.writeText(iconClass)
+                        .then(() => {
+                            const copyMessage = document.getElementById('copyMessage');
+                            copyMessage.style.display = 'block';
+                            setTimeout(() => {
+                                copyMessage.style.display = 'none';
+                            }, 2000);
+                        })
+                        .catch(err => {
+                            console.error('复制失败: ', err);
+                        });
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
